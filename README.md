@@ -17,8 +17,10 @@ Once you want to recover your configuration in a brand new Vim installation:
 
 * Clone your repository into `~/.vim`
 * Create a symbolic link `~/.vimrc` to the repository file `~/.vim/vimrc`. Another option is to create just a `.vimrc` file with:
-    if filereadable($HOME.'/.vim/vimrc')
-       source $HOME/.vim/vimrc
-    endif
+
+        if filereadable($HOME.'/.vim/vimrc')
+           source $HOME/.vim/vimrc
+        endif
+
 * Install Vundle
 * Run `:BundleInstall`
