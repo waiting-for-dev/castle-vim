@@ -6,8 +6,8 @@ My [Vim](http://www.vim.org/) configuration files.
 
 * Do not touch global Vim configuration file (`/etc/vim` in Unix). Do whatever in your user vimrc.
 * Create a new repository in `~/.vim`
-* Use [Vundle](https://github.com/gmarik/vundle) to manage your plugins in a distributable way. You could as well use [pathogen](https://github.com/tpope/vim-pathogen), but Vundle provides some great options to help you keep updated and referenced them without the need of repository submodules.
-* Tell your CVS (git, svn...) to ignore the directory where Vundle keep the plugins. Usually, `bundle`.
+* Use [NeoBundle](https://github.com/Shougo/neobundle.vim) to manage your plugins in a distributable way. Another alternatives are [Vundle](https://github.com/gmarik/vundle) or [pathogen](https://github.com/tpope/vim-pathogen).
+* Tell your CVS (git, svn...) to ignore the directory where NeoBundle keep the plugins. Usually, `bundle`.
 * Instead of using `~/.vimrc`, use a `vimrc` file inside your `~/.vim` directory. That way you can package it with your repository.
 * Commit, pull to some remote repository!!
 
@@ -22,5 +22,5 @@ Once you want to recover your configuration in a brand new Vim installation:
            source $HOME/.vim/vimrc
         endif
 
-* Install Vundle
-* Run `:BundleInstall`
+* Install NeoBundle
+* Run `:NeoBundleInstall`

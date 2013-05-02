@@ -19,42 +19,44 @@ set incsearch "incremental search
 
 set mouse=a "enable mouse usage (all modes)
 
-"""START VUNDLE CONFIGURATION (http://manual.calibre-ebook.com/news.html)"""
+"""START NEOBUNDLE CONFIGURATION (https://github.com/Shougo/neobundle.vim)"""
 
-filetype off "https://github.com/gmarik/vundle/issues/176
+if has('vim_starting')
+   set rtp+=~/.vim/bundle/neobundle.vim/ "add neobundle path to runtimepath
+end
 
-set rtp+=~/.vim/bundle/vundle/ "add vundle path to runtimepath
+call neobundle#rc(expand('~/.vim/bundle/'))
 
-call vundle#rc()
-
-"vundle intself
-Bundle 'gmarik/vundle'
+"neobundle intself
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 "GitHub repos
-Bundle 'othree/html5.vim'
-Bundle 'Shougo/neocomplcache'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-surround'
-Bundle 'tomtom/tlib_vim'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'tpope/vim-haml'
-Bundle 'pangloss/vim-javascript'
-Bundle 'leshill/vim-json'
-Bundle 'tpope/vim-rails'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'slim-template/vim-slim'
-Bundle 'evidens/vim-twig'
-Bundle 'bronson/vim-visual-star-search'
-Bundle 'maksimr/vim-translator'
-Bundle 'Townk/vim-autoclose'
+NeoBundle 'othree/html5.vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tomtom/tlib_vim'
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'leshill/vim-json'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'slim-template/vim-slim'
+NeoBundle 'evidens/vim-twig'
+NeoBundle 'bronson/vim-visual-star-search'
+NeoBundle 'maksimr/vim-translator'
+"Bundle 'Townk/vim-autoclose'
 
 "vim-scripts repos
-Bundle 'AutoTag'
-Bundle 'bufexplorer.zip'
-Bundle 'openssl.vim'
-Bundle 'taglist.vim'
-Bundle 'VimRepress'
-Bundle 'vimwiki'
+NeoBundle 'AutoTag'
+NeoBundle 'bufexplorer.zip'
+NeoBundle 'openssl.vim'
+NeoBundle 'taglist.vim'
+NeoBundle 'VimRepress'
+NeoBundle 'vimwiki'
+
+NeoBundleCheck
 
 filetype plugin indent on
 
@@ -65,8 +67,8 @@ let g:goog_user_conf = [{'langpair': 'es|en', 'v_key': 'T'}]
 
 "neocomplcache
 let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_ignore_case = 0
-let g:neocomplcache_enable_auto_select = 0
+"let g:neocomplcache_enable_ignore_case = 0
+"let g:neocomplcache_enable_auto_select = 0
 
 "taglist
 let Tlist_Use_Right_Window = 1
