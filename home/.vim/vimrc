@@ -47,6 +47,7 @@ NeoBundle 'evidens/vim-twig'
 NeoBundle 'bronson/vim-visual-star-search'
 NeoBundle 'maksimr/vim-translator'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'godlygeek/tabular'
 "Bundle 'Townk/vim-autoclose'
 
 "vim-scripts repos
