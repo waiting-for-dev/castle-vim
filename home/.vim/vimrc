@@ -49,6 +49,7 @@ NeoBundle 'maksimr/vim-translator'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'ervandew/screen'
+NeoBundle 'altercation/vim-colors-solarized'
 "Bundle 'Townk/vim-autoclose'
 
 "vim-scripts repos
@@ -80,6 +81,12 @@ let Tlist_Sort_Type = "name"
 "BufExplorer, some maping
 :nmap <C-e> :BufExplorer<Enter>
 :nmap <C-h> :BufExplorerHorizontalSplit<Enter>
+
+"solarized color scheme
+set background=dark
+colorscheme solarized
+set t_Co=16
+
 
 """OTHER OPTIONS"""
 
