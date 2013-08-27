@@ -61,6 +61,7 @@ NeoBundle 'openssl.vim'
 NeoBundle 'taglist.vim'
 NeoBundle 'VimRepress'
 NeoBundle 'vimwiki'
+NeoBundle 'phpcs.vim'
 
 NeoBundleCheck
 
