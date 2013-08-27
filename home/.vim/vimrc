@@ -51,6 +51,7 @@ NeoBundle 'godlygeek/tabular'
 NeoBundle 'ervandew/screen'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'othree/xml.vim'
+NeoBundle 'embear/vim-localvimrc'
 "Bundle 'Townk/vim-autoclose'
 
 "vim-scripts repos
