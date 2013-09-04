@@ -85,10 +85,13 @@ let Tlist_Sort_Type = "name"
 :nmap <C-e> :BufExplorer<Enter>
 :nmap <C-h> :BufExplorerHorizontalSplit<Enter>
 
+"localvimrc
+let g:localvimrc_ask = 0 "do not ask to load local vimrc
+
+"""COLOR SCHEMES"""
 colorscheme solarized
 set background=dark
 set t_Co=16
-
 
 """OTHER OPTIONS"""
 
