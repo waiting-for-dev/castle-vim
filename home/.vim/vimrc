@@ -52,7 +52,10 @@ NeoBundle 'ervandew/screen'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'othree/xml.vim'
 NeoBundle 'embear/vim-localvimrc'
-"Bundle 'Townk/vim-autoclose'
+"NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'jiangmiao/auto-pairs'
+NeoBundle 'vimwiki/vimwiki'
+NeoBundle 'jason6/vimwiki_md2html'
 
 "vim-scripts repos
 NeoBundle 'AutoTag'
@@ -60,7 +63,6 @@ NeoBundle 'bufexplorer.zip'
 NeoBundle 'openssl.vim'
 NeoBundle 'taglist.vim'
 NeoBundle 'VimRepress'
-NeoBundle 'vimwiki'
 NeoBundle 'phpcs.vim'
 
 NeoBundleCheck
