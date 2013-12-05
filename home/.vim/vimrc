@@ -45,17 +45,14 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'evidens/vim-twig'
 NeoBundle 'bronson/vim-visual-star-search'
-NeoBundle 'maksimr/vim-translator'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'ervandew/screen'
-NeoBundle 'altercation/vim-colors-solarized'
+"NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'othree/xml.vim'
 NeoBundle 'embear/vim-localvimrc'
-"NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'vimwiki/vimwiki'
-NeoBundle 'jason6/vimwiki_md2html'
+NeoBundle 'endel/vim-github-colorscheme'
 
 "vim-scripts repos
 NeoBundle 'AutoTag'
@@ -63,7 +60,6 @@ NeoBundle 'bufexplorer.zip'
 NeoBundle 'openssl.vim'
 NeoBundle 'taglist.vim'
 NeoBundle 'VimRepress'
-NeoBundle 'phpcs.vim'
 
 NeoBundleCheck
 
@@ -91,9 +87,11 @@ let Tlist_Sort_Type = "name"
 let g:localvimrc_ask = 0 "do not ask to load local vimrc
 
 """COLOR SCHEMES"""
-colorscheme solarized
-set background=dark
-set t_Co=16
+"if using solarized, uncomment following three lines
+"colorscheme solarized
+"set background='dark'
+"set t_Co=16
+colorscheme  github
 
 """OTHER OPTIONS"""
 
