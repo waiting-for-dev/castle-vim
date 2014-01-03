@@ -104,6 +104,9 @@ autocmd BufNewFile,BufRead mail.google.com* set tw=80
 "which are python classes
 autocmd BufNewFile,BufRead *.recipe set ft=python
 
+"https://github.com/slim-template/vim-slim/issues/38
+autocmd BufNewFile,BufRead *.slim set ft=slim 
+
 "load some personal configuration I don't want in a public repository
 if filereadable($HOME.'/.vim/vimrc_private')
    source $HOME/.vim/vimrc_private
