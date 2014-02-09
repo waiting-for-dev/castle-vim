@@ -60,6 +60,7 @@ NeoBundle 'bufexplorer.zip'
 NeoBundle 'openssl.vim'
 NeoBundle 'taglist.vim'
 NeoBundle 'VimRepress'
+NeoBundle 'loremipsum'
 
 NeoBundleCheck
 
@@ -85,6 +86,14 @@ let Tlist_Sort_Type = "name"
 
 "localvimrc
 let g:localvimrc_ask = 0 "do not ask to load local vimrc
+
+"loremipsum
+let g:loremipsum_marker = {}
+let g:loremipsum_paragraph_template = {
+         \ 'html': '<p>%s</p>',
+         \ 'php': '<p>%s</p>',
+         \ 'slim': 'p %s',
+         \ }
 
 """COLOR SCHEMES"""
 "if using solarized, uncomment following three lines
