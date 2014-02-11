@@ -34,7 +34,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 "GitHub repos
 NeoBundle 'othree/html5.vim'
-NeoBundle 'Shougo/neocomplcache'
+"NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tomtom/tlib_vim'
@@ -55,6 +55,7 @@ NeoBundle 'embear/vim-localvimrc'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'vimwiki/vimwiki'
 NeoBundle 'endel/vim-github-colorscheme'
+NeoBundle 'Valloric/YouCompleteMe'
 
 "vim-scripts repos
 NeoBundle 'AutoTag'
