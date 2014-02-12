@@ -98,6 +98,9 @@ let g:loremipsum_paragraph_template = {
          \ 'slim': 'p %s',
          \ }
 
+"youcompleteme
+"let g:EclimCompletionMethod = 'omnifunc' "if using eclim uncomment this line
+
 """COLOR SCHEMES"""
 "if using solarized, uncomment following three lines
 "colorscheme solarized
