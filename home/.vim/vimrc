@@ -54,12 +54,12 @@ NeoBundle 'godlygeek/tabular'
 "NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'othree/xml.vim'
 NeoBundle 'embear/vim-localvimrc'
-"NeoBundle 'jiangmiao/auto-pairs'
-NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'jiangmiao/auto-pairs'
+"NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'vimwiki/vimwiki'
 NeoBundle 'endel/vim-github-colorscheme'
 NeoBundle 'Valloric/YouCompleteMe'
-"NeoBundle 'scrooloose/syntastic'
+NeoBundle 'scrooloose/syntastic', { 'rev' : 'registry_refactor' }
 
 "vim-scripts repos
 NeoBundle 'AutoTag'
@@ -104,6 +104,10 @@ let g:loremipsum_paragraph_template = {
 
 "youcompleteme
 "let g:EclimCompletionMethod = 'omnifunc' "if using eclim uncomment this line
+
+"syntastic"
+let g:syntastic_mode_map = { 'mode': 'active',
+         \ 'active_filetypes': ['php', 'ruby'], }
 
 """COLOR SCHEMES"""
 "if using solarized, uncomment following three lines
