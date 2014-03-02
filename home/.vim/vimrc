@@ -59,7 +59,10 @@ NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'vimwiki/vimwiki'
 NeoBundle 'endel/vim-github-colorscheme'
 NeoBundle 'Valloric/YouCompleteMe'
-NeoBundle 'scrooloose/syntastic', { 'rev' : 'registry_refactor' }
+"NeoBundle 'scrooloose/syntastic', { 'rev' : 'registry_refactor' }
+NeoBundle 'christoomey/vim-tmux-navigator'
+NeoBundle 'thoughtbot/vim-rspec'
+NeoBundle 'jgdavey/tslime.vim'
 
 "vim-scripts repos
 NeoBundle 'AutoTag'
@@ -105,9 +108,17 @@ let g:loremipsum_paragraph_template = {
 "youcompleteme
 "let g:EclimCompletionMethod = 'omnifunc' "if using eclim uncomment this line
 
-"syntastic"
+"syntastic
 let g:syntastic_mode_map = { 'mode': 'active',
          \ 'active_filetypes': ['php', 'ruby'], }
+
+"vim-rspec
+"http://robots.thoughtbot.com/running-specs-from-vim-sent-to-tmux-via-tslime
+let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+map <Leader>f :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 """COLOR SCHEMES"""
 "if using solarized, uncomment following three lines
