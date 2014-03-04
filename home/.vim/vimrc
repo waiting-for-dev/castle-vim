@@ -51,7 +51,7 @@ NeoBundle 'evidens/vim-twig'
 NeoBundle 'bronson/vim-visual-star-search'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'godlygeek/tabular'
-"NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'othree/xml.vim'
 NeoBundle 'embear/vim-localvimrc'
 NeoBundle 'jiangmiao/auto-pairs'
@@ -121,11 +121,13 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 """COLOR SCHEMES"""
+set t_Co=256
 "if using solarized, uncomment following three lines
-"colorscheme solarized
-"set background='dark'
-"set t_Co=16
-colorscheme  github
+set background=light
+colorscheme solarized
+"if using github, uncomment following three lines
+"colorscheme  github
+"set background=light
 
 """OTHER OPTIONS"""
 
