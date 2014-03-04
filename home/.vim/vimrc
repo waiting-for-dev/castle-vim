@@ -71,6 +71,7 @@ NeoBundle 'openssl.vim'
 NeoBundle 'taglist.vim'
 NeoBundle 'VimRepress'
 NeoBundle 'loremipsum'
+NeoBundle 'CSApprox'
 
 NeoBundleCheck
 
