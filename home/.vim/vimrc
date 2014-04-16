@@ -61,7 +61,7 @@ NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'vimwiki/vimwiki'
 NeoBundle 'endel/vim-github-colorscheme'
 NeoBundle 'Valloric/YouCompleteMe'
-"NeoBundle 'scrooloose/syntastic', { 'rev' : 'registry_refactor' }
+NeoBundle 'scrooloose/syntastic'
 NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'thoughtbot/vim-rspec'
 NeoBundle 'jgdavey/tslime.vim'
