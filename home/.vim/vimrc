@@ -23,7 +23,7 @@ set backspace=indent,eol,start "avoid backspace problems (http://vim.wikia.com/w
 
 set vb "silent bell
 
-set t_ut=
+set ruler "Show column and line position
 
 """START NEOBUNDLE CONFIGURATION (https://github.com/Shougo/neobundle.vim)"""
 
