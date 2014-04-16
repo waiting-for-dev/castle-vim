@@ -113,7 +113,8 @@ let g:loremipsum_paragraph_template = {
 
 "syntastic
 let g:syntastic_mode_map = { 'mode': 'active',
-         \ 'active_filetypes': ['php', 'ruby'], }
+         \ 'active_filetypes': ['php', 'ruby', 'css', 'html'], }
+let g:syntastic_php_checkers = ['php']
 
 "vim-rspec
 "http://robots.thoughtbot.com/running-specs-from-vim-sent-to-tmux-via-tslime
