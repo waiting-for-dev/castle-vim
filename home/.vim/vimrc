@@ -71,7 +71,6 @@ NeoBundle 'jgdavey/tslime.vim'
 "vim-scripts repos
 NeoBundle 'AutoTag'
 NeoBundle 'bufexplorer.zip'
-NeoBundle 'openssl.vim'
 NeoBundle 'taglist.vim'
 NeoBundle 'VimRepress'
 NeoBundle 'loremipsum'
@@ -156,3 +155,7 @@ autocmd BufNewFile,BufRead *.recipe set ft=python
 if filereadable($HOME.'/.vim/vimrc_private')
    source $HOME/.vim/vimrc_private
 endif
+
+"encryption
+set cm=blowfish "use blowfish for encryption
+autocmd BufNewFile,BufRead *.enc set nobackup noswapfile nowritebackup viminfo= "enc extension will be used for encrypted files
