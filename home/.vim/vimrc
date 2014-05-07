@@ -142,6 +142,8 @@ set t_ut=
 
 """OTHER OPTIONS"""
 
+set laststatus=2 "Always show status line
+
 "when writting e-mails with gmail with <<It's All Text>> Firefox plugin
 "(https://addons.mozilla.org/En-us/firefox/addon/its-all-text/)
 "set textwidth to 80 characters
