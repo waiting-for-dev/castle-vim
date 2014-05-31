@@ -97,7 +97,7 @@ let Tlist_Sort_Type = "name"
 
 "BufExplorer, some maping
 :nmap <C-e> :BufExplorer<Enter>
-:nmap <C-s> :BufExplorerHorizontalSplit<Enter>
+:nmap <C-m> :BufExplorerHorizontalSplit<Enter>
 
 "localvimrc
 let g:localvimrc_ask = 0 "do not ask to load local vimrc
