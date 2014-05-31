@@ -165,5 +165,4 @@ autocmd BufNewFile,BufRead *.enc set nobackup noswapfile nowritebackup viminfo= 
 
 "git
 autocmd Filetype gitcommit setlocal spell textwidth=72 "commit messages with spell checking and textwidth
-autocmd BufReadPost fugitive://* set bufhidden=delete "auto-clean fugitive buffers
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P "add git branch to the status line with fugitive
