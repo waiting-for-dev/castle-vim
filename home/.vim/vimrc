@@ -25,6 +25,8 @@ set vb "silent bell
 
 set ruler "Show column and line position
 
+let mapleader=','
+
 """START NEOBUNDLE CONFIGURATION (https://github.com/Shougo/neobundle.vim)"""
 
 if has('vim_starting')
