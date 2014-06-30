@@ -70,6 +70,7 @@ NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'thoughtbot/vim-rspec'
 NeoBundle 'jgdavey/tslime.vim'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'scrooloose/nerdcommenter'
 
 "vim-scripts repos
 NeoBundle 'AutoTag'
