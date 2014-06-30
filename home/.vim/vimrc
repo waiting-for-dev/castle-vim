@@ -76,6 +76,7 @@ NeoBundle 'taglist.vim'
 NeoBundle 'VimRepress'
 NeoBundle 'loremipsum'
 NeoBundle 'CSApprox'
+NeoBundle 'ZoomWin'
 
 NeoBundleCheck
 
@@ -169,3 +170,6 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P "add gi
 
 "vimwiki
 let g:vimwiki_list = [{'path': '~/wiki/', 'path_html': '~/wiki_html/', 'syntax': 'markdown', 'ext': '.md'}]
+
+"zoomwin
+map <C-x> :ZoomWin<CR>
