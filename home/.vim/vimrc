@@ -73,6 +73,7 @@ NeoBundle 'jgdavey/tslime.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'Kris2k/ZoomWin-vim'
+NeoBundle 'tpope/vim-abolish'
 
 "vim-scripts repos
 NeoBundle 'AutoTag'
@@ -81,6 +82,7 @@ NeoBundle 'taglist.vim'
 NeoBundle 'VimRepress'
 NeoBundle 'loremipsum'
 NeoBundle 'CSApprox'
+NeoBundle 'dbext.vim'
 
 NeoBundleCheck
 
