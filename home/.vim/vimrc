@@ -135,6 +135,24 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
+"vimwiki
+let g:vimwiki_list = [{'path': '~/wiki/', 'path_html': '~/wiki_html/', 'syntax': 'markdown', 'ext': '.md'}]
+
+"zoomwin
+map <C-x> :ZoomWin<CR>
+
+"ultisnips & youcompleteme
+"See ~/.vim/autoload/ultisnips_complete.vim
+au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsListSnippets="<c-e>"
+" this mapping Enter key to <C-y> to chose the current highlight item 
+" and close the selection list, same as other IDEs.
+" CONFLICT with some plugins like tpope/Endwise
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
 """COLOR SCHEMES"""
 if $COLORTERM == 'gnome-terminal'
    set t_Co=256
@@ -175,21 +193,3 @@ autocmd BufNewFile,BufRead *.enc set nobackup noswapfile nowritebackup viminfo= 
 "git
 autocmd Filetype gitcommit setlocal spell textwidth=72 "commit messages with spell checking and textwidth
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P "add git branch to the status line with fugitive
-
-"vimwiki
-let g:vimwiki_list = [{'path': '~/wiki/', 'path_html': '~/wiki_html/', 'syntax': 'markdown', 'ext': '.md'}]
-
-"zoomwin
-map <C-x> :ZoomWin<CR>
-
-"ultisnips & youcompleteme
-"See ~/.vim/autoload/ultisnips_complete.vim
-au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsListSnippets="<c-e>"
-" this mapping Enter key to <C-y> to chose the current highlight item 
-" and close the selection list, same as other IDEs.
-" CONFLICT with some plugins like tpope/Endwise
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
