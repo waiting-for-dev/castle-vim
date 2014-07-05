@@ -76,6 +76,7 @@ NeoBundle 'Kris2k/ZoomWin-vim'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'sirver/ultisnips'
 NeoBundle 'honza/vim-snippets'
+NeoBundle 'skalnik/vim-vroom'
 
 "vim-scripts repos
 NeoBundle 'AutoTag'
