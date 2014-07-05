@@ -77,6 +77,7 @@ NeoBundle 'jeetsukumaran/vim-buffergator'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'chrisbra/NrrwRgn'
 NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'Lokaltog/vim-easymotion'
 
 "vim-scripts repos
 NeoBundle 'AutoTag'
