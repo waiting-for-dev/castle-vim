@@ -78,10 +78,11 @@ NeoBundle 'tpope/vim-abolish'
 NeoBundle 'sirver/ultisnips'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'skalnik/vim-vroom'
+NeoBundle 'jeetsukumaran/vim-buffergator'
 
 "vim-scripts repos
 NeoBundle 'AutoTag'
-NeoBundle 'bufexplorer.zip'
+"NeoBundle 'bufexplorer.zip'
 NeoBundle 'taglist.vim'
 NeoBundle 'VimRepress'
 NeoBundle 'loremipsum'
@@ -107,8 +108,8 @@ let Tlist_Use_Right_Window = 1
 let Tlist_Sort_Type = "name"
 
 "BufExplorer, some maping
-:nmap <C-e> :BufExplorer<Enter>
-:nmap <C-m> :BufExplorerHorizontalSplit<Enter>
+"":nmap <C-e> :BufExplorer<Enter>
+"":nmap <C-m> :BufExplorerHorizontalSplit<Enter>
 
 "localvimrc
 let g:localvimrc_ask = 0 "do not ask to load local vimrc
