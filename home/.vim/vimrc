@@ -74,10 +74,10 @@ NeoBundle 'sirver/ultisnips'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'skalnik/vim-vroom'
 NeoBundle 'jeetsukumaran/vim-buffergator'
+NeoBundle 'majutsushi/tagbar'
 
 "vim-scripts repos
 NeoBundle 'AutoTag'
-NeoBundle 'taglist.vim'
 NeoBundle 'VimRepress'
 NeoBundle 'loremipsum'
 NeoBundle 'CSApprox'
@@ -89,12 +89,11 @@ filetype plugin indent on
 
 """PLUGINS CONFIGURATION"""
 
+"tagbar
+nmap <leader>t :TagbarToggle<CR>
+
 "gtranslate
 let g:goog_user_conf = [{'langpair': 'es|en', 'v_key': 'T'}]
-
-"taglist
-let Tlist_Use_Right_Window = 1
-let Tlist_Sort_Type = "name"
 
 "localvimrc
 let g:localvimrc_ask = 0 "do not ask to load local vimrc
