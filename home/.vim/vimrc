@@ -75,6 +75,7 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'skalnik/vim-vroom'
 NeoBundle 'jeetsukumaran/vim-buffergator'
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'chrisbra/NrrwRgn'
 
 "vim-scripts repos
 NeoBundle 'AutoTag'
