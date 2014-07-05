@@ -68,8 +68,9 @@ NeoBundle 'endel/vim-github-colorscheme'
 NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'christoomey/vim-tmux-navigator'
-NeoBundle 'thoughtbot/vim-rspec'
-NeoBundle 'jgdavey/tslime.vim'
+"NeoBundle 'thoughtbot/vim-rspec'
+"NeoBundle 'jgdavey/tslime.vim'
+NeoBundle 'benmills/vimux'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'Kris2k/ZoomWin-vim'
@@ -156,6 +157,7 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 "vim-vroom
 let g:vroom_use_spring=1
+let g:vroom_use_vimux=1
 
 """COLOR SCHEMES"""
 if $COLORTERM == 'gnome-terminal'
