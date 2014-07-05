@@ -195,6 +195,8 @@ autocmd Filetype gitcommit setlocal spell textwidth=72 "commit messages with spe
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P "add git branch to the status line with fugitive
 
 "command to open easily this file
-command Esource e ~/.vim/vimrc
-command Ssource sp ~/.vim/vimrc
-command Vsource vp ~/.vim/vimrc
+command! Esource e ~/.vim/vimrc
+command! Ssource sp ~/.vim/vimrc
+command! Vsource vp ~/.vim/vimrc
+"command to reload local vim configuration
+command! Source source $MYVIMRC
