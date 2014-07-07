@@ -154,6 +154,12 @@ let g:UltiSnipsListSnippets="<c-e>"
 let g:vroom_use_spring=1
 let g:vroom_use_vimux=1
 
+"vimux
+map <Leader>l :VimuxRunLastCommand<CR>
+
+"buffergator
+let g:buffergator_viewport_split_policy='T'
+
 """COLOR SCHEMES"""
 if $COLORTERM == 'gnome-terminal'
    set t_Co=256
