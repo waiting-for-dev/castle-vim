@@ -163,7 +163,14 @@ let g:buffergator_sort_regime='mru'
 
 "vimrails
 let g:rails_projections = {
-      \ "db/seeds/*.seeds.rb": {"command": "seed"}}
+         \ "db/seeds/*.seeds.rb": {"command": "seed"},
+         \ "spec/views/*_spec.rb": {
+         \   "command": "viewspec",
+         \   "alternate": "app/views/%s",
+         \   "template":
+         \     ["require 'spec_helper'", "describe \"%s\" do", "end"],
+         \ }
+         \}
 
 """COLOR SCHEMES"""
 if $COLORTERM == 'gnome-terminal'
