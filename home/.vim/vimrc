@@ -172,6 +172,10 @@ let g:rails_projections = {
          \     ["require 'spec_helper'", "describe \"%s\" do", "end"],
          \ }
          \}
+map <leader>sf :Eintegrationtest 
+map <leader>sv :Eviewspec 
+map <leader>sc :Efunctionaltest 
+map <leader>sm :Eunittest 
 
 "fugitive
 nmap <leader>gg :Git 
