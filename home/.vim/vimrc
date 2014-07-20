@@ -172,6 +172,14 @@ let g:rails_projections = {
          \ }
          \}
 
+"fugitive
+nmap <leader>gg :Git 
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>gc :Gcommit<CR>
+nmap <leader>gr :Gread<CR>
+nmap <leader>gw :Gwrite<CR>
+nmap <leader>gd :Gdiff<CR>
+
 """COLOR SCHEMES"""
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
