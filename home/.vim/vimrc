@@ -184,6 +184,7 @@ nmap <leader>gc :Gcommit<CR>
 nmap <leader>gr :Gread<CR>
 nmap <leader>gw :Gwrite<CR>
 nmap <leader>gd :Gdiff<CR>
+nmap <leader>g. :Git add .<CR>
 
 """COLOR SCHEMES"""
 if $COLORTERM == 'gnome-terminal'
@@ -232,3 +233,8 @@ command! Ssource sp ~/.vim/vimrc
 command! Vsource vp ~/.vim/vimrc
 "command to reload local vim configuration
 command! Source source $MYVIMRC
+
+"command to open easily my main zsh config file
+command! Eoh e ~/.oh-my-zsh/custom/custom.zsh
+command! Soh sp ~/.oh-my-zsh/custom/custom.zsh
+command! Voh vp ~/.oh-my-zsh/custom/custom.zsh
