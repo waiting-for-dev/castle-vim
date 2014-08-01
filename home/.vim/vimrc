@@ -80,6 +80,7 @@ NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-repeat'
+NeoBundle 'danchoi/ri.vim'
 
 "vim-scripts repos
 NeoBundle 'AutoTag'
@@ -239,3 +240,8 @@ command! Source source $MYVIMRC
 command! Eoh e ~/.oh-my-zsh/custom/custom.zsh
 command! Soh sp ~/.oh-my-zsh/custom/custom.zsh
 command! Voh vp ~/.oh-my-zsh/custom/custom.zsh
+
+"ri
+nnoremap  ,ar :call ri#OpenSearchPrompt(0)<cr> " horizontal split
+nnoremap  ,aR :call ri#OpenSearchPrompt(1)<cr> " vertical split
+nnoremap  ,ak :call ri#LookupNameUnderCursor()<cr> " keyword lookup
