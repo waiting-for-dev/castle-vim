@@ -180,6 +180,12 @@ map <leader>sf :Eintegrationtest
 map <leader>sv :Eviewspec 
 map <leader>sc :Efunctionaltest 
 map <leader>sm :Eunittest 
+"run current test
+map <leader>r :.Runner
+"run current file tests
+map <leader>R :Rrunner 
+"run all test suite in the background
+map <leader>A :Dispatch! :Runner spec 
 
 "fugitive
 nmap <leader>gg :Git 
