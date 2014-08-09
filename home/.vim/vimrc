@@ -80,6 +80,7 @@ NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'danchoi/ri.vim'
 NeoBundle 'rainerborene/vim-reek'
 
@@ -185,7 +186,7 @@ map <leader>r :.Runner
 "run current file tests
 map <leader>R :Rrunner 
 "run all test suite in the background
-map <leader>A :Dispatch! :Runner spec 
+map <leader>A :Dispatch! :Runner spec<CR>
 
 "fugitive
 nmap <leader>gg :Git 
