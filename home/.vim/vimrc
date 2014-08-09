@@ -81,6 +81,7 @@ NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'danchoi/ri.vim'
+NeoBundle 'rainerborene/vim-reek'
 
 "vim-scripts repos
 NeoBundle 'AutoTag'
@@ -203,6 +204,13 @@ endif
 " http://sunaku.github.io/vim-256color-bce.html
 set t_ut=
 
+"reek
+let g:reek_always_show = 0
+
+"ri
+nnoremap  ,ar :call ri#OpenSearchPrompt(0)<cr> " horizontal split
+nnoremap  ,aR :call ri#OpenSearchPrompt(1)<cr> " vertical split
+nnoremap  ,ak :call ri#LookupNameUnderCursor()<cr> " keyword lookup
 """OTHER OPTIONS"""
 
 set laststatus=2 "Always show status line
@@ -241,7 +249,3 @@ command! Eoh e ~/.oh-my-zsh/custom/custom.zsh
 command! Soh sp ~/.oh-my-zsh/custom/custom.zsh
 command! Voh vp ~/.oh-my-zsh/custom/custom.zsh
 
-"ri
-nnoremap  ,ar :call ri#OpenSearchPrompt(0)<cr> " horizontal split
-nnoremap  ,aR :call ri#OpenSearchPrompt(1)<cr> " vertical split
-nnoremap  ,ak :call ri#LookupNameUnderCursor()<cr> " keyword lookup
