@@ -258,5 +258,5 @@ command! Soh sp ~/.oh-my-zsh/custom/custom.zsh
 command! Voh vp ~/.oh-my-zsh/custom/custom.zsh
 
 "command to reload quickfix window and to reload and jump to last line
-:autocmd BufReadPost quickfix nnoremap r :Copen<CR>
-:autocmd BufReadPost quickfix nnoremap R :Copen<CR>G
+:autocmd BufReadPost quickfix nnoremap <buffer> r :Copen<CR>
+:autocmd BufReadPost quickfix nnoremap <buffer> R :Copen<CR>G
