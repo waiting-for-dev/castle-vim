@@ -83,13 +83,14 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'danchoi/ri.vim'
 NeoBundle 'rainerborene/vim-reek'
+"NeoBundle 'gabebw/vim-spec-runner'
+NeoBundle 'airblade/vim-gitgutter'
 
 "vim-scripts repos
 NeoBundle 'AutoTag'
 NeoBundle 'VimRepress'
 NeoBundle 'loremipsum'
 NeoBundle 'CSApprox'
-NeoBundle 'dbext.vim'
 
 NeoBundleCheck
 
@@ -175,18 +176,49 @@ let g:rails_projections = {
          \   "alternate": "app/views/%s",
          \   "template":
          \     ["require 'spec_helper'", "describe \"%s\" do", "end"],
-         \ }
+         \ },
+         \ "app/admin/*.rb": {
+         \   "command": "admin",
+         \   "affinity": "model",
+         \   "related": "app/models/%s.rb",
+         \   "template":
+         \     "ActiveAdmin.register %S do\n\n end"
+         \ },
+         \ "app/uploaders/*_uploader.rb": {
+         \   "command": "uploader",
+         \   "template":
+         \     "class %SUploader < CarrierWave::Uploader::Base\n\nend"
+         \ },
+         \ "app/policies/*_policy.rb": {
+         \   "command": "policy",
+         \   "affinity": "model",
+         \   "related": "app/models/%s.rb",
+         \   "alternate": "spec/policies/%s_policy_spec.rb",
+         \   "template":
+         \     "class  %SPolicy < ApplicationPolicy \n\nend"
+         \ },
          \}
 map <leader>sf :Eintegrationtest 
 map <leader>sv :Eviewspec 
 map <leader>sc :Efunctionaltest 
 map <leader>sm :Eunittest 
+map <leader>fc :Econtroller  
+map <leader>fv :Eview  
+map <leader>fm :Emodel  
+map <leader>fh :Ehelper  
 "run current test
-map <leader>r :.Runner
+map <leader>r :.Runner<CR>
 "run current file tests
-map <leader>R :Rrunner 
+map <leader>R :Rrunner<CR>
 "run all test suite in the background
 map <leader>A :Dispatch! :Runner spec<CR>
+
+" vim-spec-runner
+" use dispatch
+let g:spec_runner_dispatcher = 'Dispatch {command}'
+"map <Leader>R <Plug>RunCurrentSpecFile
+"map <Leader>r <Plug>RunFocusedSpec
+"map <Leader>l <Plug>RunMostRecentSpec
 
 "fugitive
 nmap <leader>gg :Git 
@@ -198,7 +230,7 @@ nmap <leader>gd :Gdiff<CR>
 nmap <leader>g. :Git add .<CR>
 
 """COLOR SCHEMES"""
-if $COLORTERM == 'gnome-terminal'
+if $TERM == 'xterm'
   set t_Co=256
   "if using solarized, uncomment following three lines
   "set background=light
@@ -213,7 +245,7 @@ endif
 set t_ut=
 
 "reek
-let g:reek_always_show = 0
+"let g:reek_always_show = 0
 
 "ri
 nnoremap  ,ar :call ri#OpenSearchPrompt(0)<cr> " horizontal split
