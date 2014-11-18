@@ -33,7 +33,7 @@ if has('vim_starting')
   set rtp+=~/.vim/bundle/neobundle.vim/ "add neobundle path to runtimepath
 end
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 "neobundle intself
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -85,12 +85,16 @@ NeoBundle 'danchoi/ri.vim'
 NeoBundle 'rainerborene/vim-reek'
 "NeoBundle 'gabebw/vim-spec-runner'
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundle '/home/marc/projects/vim/www/', { 'type' : 'nosync' }
+"NeoBundle 'waiting-for-dev/www.vim'
 
 "vim-scripts repos
 NeoBundle 'AutoTag'
 NeoBundle 'VimRepress'
 NeoBundle 'loremipsum'
 NeoBundle 'CSApprox'
+
+call neobundle#end()
 
 NeoBundleCheck
 
@@ -168,51 +172,6 @@ map <Leader>l :VimuxRunLastCommand<CR>
 let g:buffergator_viewport_split_policy='T'
 let g:buffergator_sort_regime='mru'
 
-"vimrails
-let g:rails_projections = {
-         \ "db/seeds/*.seeds.rb": {"command": "seed"},
-         \ "spec/views/*_spec.rb": {
-         \   "command": "viewspec",
-         \   "alternate": "app/views/%s",
-         \   "template":
-         \     ["require 'spec_helper'", "describe \"%s\" do", "end"],
-         \ },
-         \ "app/admin/*.rb": {
-         \   "command": "admin",
-         \   "affinity": "model",
-         \   "related": "app/models/%s.rb",
-         \   "template":
-         \     "ActiveAdmin.register %S do\n\n end"
-         \ },
-         \ "app/uploaders/*_uploader.rb": {
-         \   "command": "uploader",
-         \   "template":
-         \     "class %SUploader < CarrierWave::Uploader::Base\n\nend"
-         \ },
-         \ "app/policies/*_policy.rb": {
-         \   "command": "policy",
-         \   "affinity": "model",
-         \   "related": "app/models/%s.rb",
-         \   "alternate": "spec/policies/%s_policy_spec.rb",
-         \   "template":
-         \     "class  %SPolicy < ApplicationPolicy \n\nend"
-         \ },
-         \}
-map <leader>sf :Eintegrationtest 
-map <leader>sv :Eviewspec 
-map <leader>sc :Efunctionaltest 
-map <leader>sm :Eunittest 
-map <leader>fc :Econtroller  
-map <leader>fv :Eview  
-map <leader>fm :Emodel  
-map <leader>fh :Ehelper  
-"run current test
-map <leader>r :.Runner<CR>
-"run current file tests
-map <leader>R :Rrunner<CR>
-"run all test suite in the background
-map <leader>A :Dispatch! :Runner spec<CR>
-
 " vim-spec-runner
 " use dispatch
 let g:spec_runner_dispatcher = 'Dispatch {command}'
@@ -230,7 +189,7 @@ nmap <leader>gd :Gdiff<CR>
 nmap <leader>g. :Git add .<CR>
 
 """COLOR SCHEMES"""
-if $TERM == 'xterm'
+"if $TERM == 'xterm'
   set t_Co=256
   "if using solarized, uncomment following three lines
   "set background=light
@@ -240,17 +199,17 @@ if $TERM == 'xterm'
   "set background=light
   "colorscheme tomorrow
   "source $HOME/.vim/colorschemes/tomorrow/colors/Tomorrow-Night-Blue.vim
-endif
+"endif
 " http://sunaku.github.io/vim-256color-bce.html
-set t_ut=
+"set t_ut=
 
 "reek
 "let g:reek_always_show = 0
 
 "ri
-nnoremap  ,ar :call ri#OpenSearchPrompt(0)<cr> " horizontal split
-nnoremap  ,aR :call ri#OpenSearchPrompt(1)<cr> " vertical split
-nnoremap  ,ak :call ri#LookupNameUnderCursor()<cr> " keyword lookup
+nnoremap  ,dr :call ri#OpenSearchPrompt(0)<cr> " horizontal split
+nnoremap  ,dR :call ri#OpenSearchPrompt(1)<cr> " vertical split
+nnoremap  ,dk :call ri#LookupNameUnderCursor()<cr> " keyword lookup
 """OTHER OPTIONS"""
 
 set laststatus=2 "Always show status line
@@ -292,3 +251,17 @@ command! Voh vp ~/.oh-my-zsh/custom/custom.zsh
 "command to reload quickfix window and to reload and jump to last line
 :autocmd BufReadPost quickfix nnoremap <buffer> r :Copen<CR>
 :autocmd BufReadPost quickfix nnoremap <buffer> R :Copen<CR>G
+
+let g:www_urls = {
+         \ 'rails' : 'http://guides.rubyonrails.org/',
+         \ 'ruby' : 'http://www.ruby-doc.org/core-2.1.4/',
+         \ 'factory_girl' : 'http://www.rubydoc.info/gems/factory_girl/file/GETTING_STARTED.md',
+         \ 'capybara' : 'https://github.com/jnicklas/capybara',
+         \ 'formtastic': 'https://github.com/justinfrench/formtastic',
+         \ 'rspec' : 'http://betterspecs.org/',
+         \ 'shoulda_matchers' : 'https://github.com/thoughtbot/shoulda-matchers',
+         \ 'gh?' : 'https://github.com/search?utf8=%E2%9C%93&ref=simplesearch&q=',
+         \
+         \ }
+let g:www_sessions = { 'rails' : ['ruby', 'rails'] }
+let g:www_default_search_engine = 'g?'
