@@ -85,8 +85,8 @@ NeoBundle 'danchoi/ri.vim'
 NeoBundle 'rainerborene/vim-reek'
 "NeoBundle 'gabebw/vim-spec-runner'
 NeoBundle 'airblade/vim-gitgutter'
-NeoBundle '/home/marc/projects/vim/www/', { 'type' : 'nosync' }
-"NeoBundle 'waiting-for-dev/www.vim'
+"NeoBundle 'waiting-for-dev/vim-www'
+NeoBundle '/home/marc/projects/vim/vim-www/', { 'type' : 'nosync' }
 
 "vim-scripts repos
 NeoBundle 'AutoTag'
@@ -254,13 +254,21 @@ command! Voh vp ~/.oh-my-zsh/custom/custom.zsh
 
 let g:www_urls = {
          \ 'rails' : 'http://guides.rubyonrails.org/',
+         \ 'rails_callbacks' : 'http://guides.rubyonrails.org/active_record_callbacks.html',
+         \ 'rails_migrations' : 'http://guides.rubyonrails.org/migrations.html',
+         \ 'rails_validations' : 'http://guides.rubyonrails.org/active_record_validations.html',
+         \ 'rails_i18n' : 'http://guides.rubyonrails.org/i18n.html',
          \ 'ruby' : 'http://www.ruby-doc.org/core-2.1.4/',
          \ 'factory_girl' : 'http://www.rubydoc.info/gems/factory_girl/file/GETTING_STARTED.md',
          \ 'capybara' : 'https://github.com/jnicklas/capybara',
          \ 'formtastic': 'https://github.com/justinfrench/formtastic',
          \ 'rspec' : 'http://betterspecs.org/',
          \ 'shoulda_matchers' : 'https://github.com/thoughtbot/shoulda-matchers',
+         \ 'ransack' : 'https://github.com/activerecord-hackery/ransack',
          \ 'gh?' : 'https://github.com/search?utf8=%E2%9C%93&ref=simplesearch&q=',
+         \ 'enes?' : 'http://www.wordreference.com/es/en/translation.asp?spen=',
+         \ 'gem?' : 'http://rubygems.org/search?query=',
+         \ 't?' : 'https://translate.google.de/#ne/de/',
          \
          \ }
 let g:www_sessions = { 'rails' : ['ruby', 'rails'] }
