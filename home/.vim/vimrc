@@ -72,7 +72,7 @@ NeoBundle 'Kris2k/ZoomWin-vim'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'sirver/ultisnips'
 NeoBundle 'honza/vim-snippets'
-NeoBundle 'skalnik/vim-vroom'
+"NeoBundle 'skalnik/vim-vroom'
 NeoBundle 'jeetsukumaran/vim-buffergator'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'chrisbra/NrrwRgn'
@@ -83,7 +83,7 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'danchoi/ri.vim'
 NeoBundle 'rainerborene/vim-reek'
-"NeoBundle 'gabebw/vim-spec-runner'
+NeoBundle 'gabebw/vim-spec-runner'
 NeoBundle 'airblade/vim-gitgutter'
 "NeoBundle 'waiting-for-dev/vim-www'
 NeoBundle '/home/marc/projects/vim/vim-www/', { 'type' : 'nosync' }
@@ -162,8 +162,8 @@ let g:UltiSnipsListSnippets="<c-e>"
 "inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 "vim-vroom
-let g:vroom_use_spring=1
-let g:vroom_use_vimux=1
+"let g:vroom_use_spring=1
+"let g:vroom_use_vimux=1
 
 "vimux
 map <Leader>l :VimuxRunLastCommand<CR>
@@ -171,13 +171,6 @@ map <Leader>l :VimuxRunLastCommand<CR>
 "buffergator
 let g:buffergator_viewport_split_policy='T'
 let g:buffergator_sort_regime='mru'
-
-" vim-spec-runner
-" use dispatch
-let g:spec_runner_dispatcher = 'Dispatch {command}'
-"map <Leader>R <Plug>RunCurrentSpecFile
-"map <Leader>r <Plug>RunFocusedSpec
-"map <Leader>l <Plug>RunMostRecentSpec
 
 "fugitive
 nmap <leader>gg :Git 
