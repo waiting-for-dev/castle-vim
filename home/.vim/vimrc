@@ -85,8 +85,8 @@ NeoBundle 'danchoi/ri.vim'
 NeoBundle 'rainerborene/vim-reek'
 NeoBundle 'gabebw/vim-spec-runner'
 NeoBundle 'airblade/vim-gitgutter'
-"NeoBundle 'waiting-for-dev/vim-www'
-NeoBundle '/home/marc/projects/vim/vim-www/', { 'type' : 'nosync' }
+NeoBundle 'waiting-for-dev/vim-www'
+"NeoBundle '/home/marc/projects/vim/vim-www/', { 'type' : 'nosync' }
 
 "vim-scripts repos
 NeoBundle 'AutoTag'
