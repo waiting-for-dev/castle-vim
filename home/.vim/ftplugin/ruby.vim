@@ -61,6 +61,10 @@ if exists("b:rails_root")
             \   "template":
             \     "require 'test_helper'\n\nclass  %SSerializerTest < ActiveSupport::TestCase\nend"
             \ },
+            \ "spec/support/schemas/*.json": {
+            \   "command": "jsonschema",
+            \   "affinity": "model"
+            \ },
             \}
 else
    " vim-spec-runner
