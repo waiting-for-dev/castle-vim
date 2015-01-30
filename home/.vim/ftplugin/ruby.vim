@@ -45,6 +45,14 @@ if exists("b:rails_root")
             \   "template":
             \     "class  %SPolicy < ApplicationPolicy \n\nend"
             \ },
+            \ "spec/policies/*_policy_spec.rb": {
+            \   "command": "policyspec",
+            \   "affinity": "model",
+            \   "related": "app/models/%s.rb",
+            \   "alternate": "app/policies/%s_policy.rb",
+            \   "template":
+            \     "require 'rails_helper'\n\ndescribe %SPolicy do\n  subject {open} %SPolicy.new(user, record) {close}\n\nend"
+            \ },
             \ "app/serializers/*_serializer.rb": {
             \   "command": "serializer",
             \   "affinity": "model",

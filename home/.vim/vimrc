@@ -7,7 +7,7 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-set shiftwidth=3 "number of spaces for (auto)indent
+set shiftwidth=2 "number of spaces for (auto)indent
 
 set expandtab "use spaces instead of tabs
 
@@ -289,17 +289,26 @@ let g:www_urls = {
          \ 'capybara' : 'https://github.com/jnicklas/capybara',
          \ 'formtastic': 'https://github.com/justinfrench/formtastic',
          \ 'rspec' : 'http://betterspecs.org/',
+         \ 'rspec-mock' : 'https://github.com/rspec/rspec-mocks',
          \ 'shoulda_matchers' : 'https://github.com/thoughtbot/shoulda-matchers',
          \ 'ransack' : 'https://github.com/activerecord-hackery/ransack',
          \ 'pi_ragas' : 'https://www.pivotaltracker.com/n/projects/1054406',
          \ 'pi_almacen' : 'https://www.pivotaltracker.com/n/projects/1184952',
          \ 'pi_hastinik' : 'https://www.pivotaltracker.com/n/projects/1128094',
          \ 'timer' : 'https://www.toggl.com/app/timer',
+         \ 'middleman' : 'http://middlemanapp.com/',
          \ 'gh?' : 'https://github.com/search?utf8=%E2%9C%93&ref=simplesearch&q=',
          \ 'enes?' : 'http://www.wordreference.com/es/en/translation.asp?spen=',
          \ 'gem?' : 'http://rubygems.org/search?query=',
          \ 't?' : 'https://translate.google.de/#ne/de/',
+         \ 'o?' : 'https://www.omniref.com/?q=',
          \
          \ }
 let g:www_sessions = { 'rails' : ['ruby', 'rails'] }
 let g:www_default_search_engine = 'g?'
+
+"tab navigation
+nnoremap <leader>tp :tabprevious<CR>
+nnoremap <leader>tn :tabNext<CR>
+nnoremap <leader>tP :tabfirst<CR>
+nnoremap <leader>tN :tablast<CR>
