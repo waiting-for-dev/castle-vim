@@ -53,6 +53,34 @@ if exists("b:rails_root")
             \   "template":
             \     "require 'rails_helper'\n\ndescribe %SPolicy do\n  subject {open} %SPolicy.new(user, record) {close}\n\nend"
             \ },
+            \ "app/services/*.rb": {
+            \   "command": "service",
+            \   "alternate": "spec/services/%s_spec.rb",
+            \   "template":
+            \     "class  %S\n\nend"
+            \ },
+            \ "spec/services/*_spec.rb": {
+            \   "command": "servicespec",
+            \   "alternate": "app/services/%s.rb",
+            \   "template":
+            \     "require 'rails_helper'\n\ndescribe %S do\n\nend"
+            \ },
+            \ "app/queries/*_query.rb": {
+            \   "command": "query",
+            \   "affinity": "model",
+            \   "related": "app/models/%s_query.rb",
+            \   "alternate": "spec/queries/%s_query_spec.rb",
+            \   "template":
+            \     "class  %S\n\nend"
+            \ },
+            \ "spec/queries/*_query_spec.rb": {
+            \   "command": "queryspec",
+            \   "affinity": "model",
+            \   "related": "app/models/%s_query.rb",
+            \   "alternate": "app/queries/%s_query.rb",
+            \   "template":
+            \     "require 'rails_helper'\n\ndescribe %SQuery do\n\nend"
+            \ },
             \ "app/serializers/*_serializer.rb": {
             \   "command": "serializer",
             \   "affinity": "model",
@@ -72,6 +100,23 @@ if exists("b:rails_root")
             \ "spec/support/schemas/*.json": {
             \   "command": "jsonschema",
             \   "affinity": "model"
+            \ },
+            \ "spec/support/shared_examples/*.rb": {
+            \   "command": "shared_example",
+            \ },
+            \ "spec/support/shared_context/*.rb": {
+            \   "command": "shared_context",
+            \ },
+            \ "spec/support/helpers/*.rb": {
+            \   "command": "rspec_helper",
+            \ },
+            \ "spec/support/matchers/*.rb": {
+            \   "command": "matcher",
+            \ },
+            \ "app/pdfs/*_pdf.rb": {
+            \   "command": "pdf",
+            \   "template":
+            \     "class  %SPdf\n\nend"
             \ },
             \}
 else
