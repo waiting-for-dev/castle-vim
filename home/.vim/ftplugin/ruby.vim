@@ -4,6 +4,7 @@ set tabstop=2 shiftwidth=2 softtabstop=2
 imap <C-e> <CR><CR>end<Esc>-cc
 "some abbreviation
 abbreviate saop save_and_open_page
+abbreviate bp binding.pry
 
 "vimrails
 if exists("b:rails_root")
@@ -53,6 +54,18 @@ if exists("b:rails_root")
             \   "template":
             \     "require 'rails_helper'\n\ndescribe %SPolicy do\n  subject {open} %SPolicy.new(user, record) {close}\n\nend"
             \ },
+            \ "app/validators/*_validator.rb": {
+            \   "command": "validator",
+            \   "alternate": "spec/validators/%s_validator_spec.rb",
+            \   "template":
+            \     "class  %SValidator < ActiveModel::Validator\n  def validate(record)\n  end\nend"
+            \ },
+            \ "spec/validators/*_validator_spec.rb": {
+            \   "command": "validatorspec",
+            \   "alternate": "app/validators/%s_validator.rb",
+            \   "template":
+            \     "require 'rails_helper'\n\nclass Validatable\n  include ActiveModel::Validations\nend\n\ndescribe %SValidator do\n  subject {open} Validatable.new {close}\nend"
+            \ },
             \ "app/services/*.rb": {
             \   "command": "service",
             \   "alternate": "spec/services/%s_spec.rb",
@@ -97,6 +110,40 @@ if exists("b:rails_root")
             \   "template":
             \     "require 'test_helper'\n\nclass  %SSerializerTest < ActiveSupport::TestCase\nend"
             \ },
+            \ "app/representers/*_representer.rb": {
+            \   "command": "representer",
+            \   "affinity": "model",
+            \   "related": "app/models/%s.rb",
+            \   "alternate": "spec/representers/%s_representer_spec.rb",
+            \   "template":
+            \     "module  %SRepresenter\ninclude Roar::JSON\nend"
+            \ },
+            \ "spec/representers/*_representer_spec.rb": {
+            \   "command": "representerspec",
+            \   "affinity": "model",
+            \   "related": "app/models/%s.rb",
+            \   "alternate": "app/representers/%s_representer.rb",
+            \   "template":
+            \     "require 'rails_helper'\n\ndescribe  %SRepresenter\nend"
+            \ },
+            \ "app/requesters/*_requester.rb": {
+            \   "command": "requester",
+            \   "alternate": "spec/requesters/%s_requester_spec.rb",
+            \   "template":
+            \     "module  %SRequester\nend"
+            \ },
+            \ "spec/requesters/*_requester_spec.rb": {
+            \   "command": "requesterspec",
+            \   "alternate": "app/requesters/%s_requester.rb",
+            \   "template":
+            \     "require 'rails_helper'\n\ndescribe  %SRequester\nend"
+            \ },
+            \ "spec/jobs/*_job_spec.rb": {
+            \   "command": "jobspec",
+            \   "alternate": "app/jobs/%s_job.rb",
+            \   "template":
+            \     "require 'rails_helper'\n\ndescribe  %SJob\nend"
+            \ },
             \ "spec/support/schemas/*.json": {
             \   "command": "jsonschema",
             \   "affinity": "model"
@@ -104,7 +151,7 @@ if exists("b:rails_root")
             \ "spec/support/shared_examples/*.rb": {
             \   "command": "shared_example",
             \ },
-            \ "spec/support/shared_context/*.rb": {
+            \ "spec/support/shared_contexts/*.rb": {
             \   "command": "shared_context",
             \ },
             \ "spec/support/helpers/*.rb": {
@@ -127,3 +174,35 @@ else
    map <Leader>r <Plug>RunFocusedSpec
    map <Leader>l <Plug>RunMostRecentSpec
 endif
+
+
+"https://github.com/majutsushi/tagbar/wiki#ruby
+" use 'ripper-tags' (if available) to generate ruby ctags with tagbar
+if executable('ripper-tags')
+  " Configure Tagbar to user ripper-tags with ruby
+  let g:tagbar_type_ruby = {
+        \ 'kinds' : [
+          \ 'm:modules',
+          \ 'c:classes',
+          \ 'f:methods',
+          \ 'F:singleton methods',
+          \ 'C:constants',
+          \ 'a:aliases',
+        \ ],
+        \ 'ctagsbin': 'ripper-tags',
+        \ 'ctagsargs': ['-f', '-']
+        \ }
+  let g:gutentags_ctags_executable_ruby = 'ripper-tags'
+endif
+"let g:tagbar_type_ruby = {
+"      \ 'kinds' : [
+"      \ 'm:modules',
+"      \ 'c:classes',
+"      \ 'd:describes',
+"      \ 'C:contexts',
+"      \ 'f:methods',
+"      \ 'F:singleton methods'
+"      \ ]
+"      \ }
+"let g:tabgbar_ctags_bin="ripper-tags" 
+

@@ -49,6 +49,7 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'leshill/vim-json'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-rake'
+NeoBundle 'tpope/vim-projectionist'
 NeoBundle 'tpope/vim-bundler'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'slim-template/vim-slim'
@@ -67,7 +68,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'benmills/vimux'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/nerdcommenter' 
 NeoBundle 'Kris2k/ZoomWin-vim'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'sirver/ultisnips'
@@ -82,14 +83,17 @@ NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'danchoi/ri.vim'
-NeoBundle 'rainerborene/vim-reek'
 NeoBundle 'gabebw/vim-spec-runner'
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'waiting-for-dev/vim-www'
 "NeoBundle '/home/marc/projects/vim/vim-www/', { 'type' : 'nosync' }
+"NeoBundle 'ludovicchabant/vim-gutentags'
+"NeoBundle '/home/marc/projects/test/vim-gutentags/', { 'type' : 'nosync' }
+NeoBundle 'waiting-for-dev/vim-gutentags', "mb_filetype_ctags_command"
 
 "vim-scripts repos
-NeoBundle 'AutoTag'
+"NeoBundle 'AutoTag'
 NeoBundle 'VimRepress'
 NeoBundle 'loremipsum'
 NeoBundle 'CSApprox'
@@ -126,7 +130,10 @@ let g:loremipsum_paragraph_template = {
 let g:syntastic_mode_map = { 'mode': 'active',
       \ 'active_filetypes': ['php', 'ruby', 'css', 'html'], }
 let g:syntastic_php_checkers = ['php']
-let g:syntastic_ruby_checkers = ['ruby', 'rubocop']
+let g:syntastic_ruby_checkers = ['ruby', 'rubocop', 'reek']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_check_on_open = 1
 
 "vimwiki
 let g:vimwiki_list = [{'path': '~/wiki/', 'path_html': '~/wiki_html/', 'syntax': 'markdown', 'ext': '.md'}]
@@ -199,13 +206,24 @@ noremap <leader>n :NERDTreeToggle<CR>
 " http://sunaku.github.io/vim-256color-bce.html
 "set t_ut=
 
-"reek
-let g:reek_always_show = 0
-
 "ri
 nnoremap  ,dr :call ri#OpenSearchPrompt(0)<cr> " horizontal split
 nnoremap  ,dR :call ri#OpenSearchPrompt(1)<cr> " vertical split
 nnoremap  ,dk :call ri#LookupNameUnderCursor()<cr> " keyword lookup
+
+"CtrlP
+"Remeber last mode (https://github.com/kien/ctrlp.vim/issues/330)
+let g:ctrlp_cmd = 'call CallCtrlP()'
+
+func! CallCtrlP()
+    if exists('s:called_ctrlp')
+        CtrlPLastMode
+    else
+        let s:called_ctrlp = 1
+        CtrlP
+    endif
+endfunc
+
 """OTHER OPTIONS"""
 
 set laststatus=2 "Always show status line
@@ -284,7 +302,7 @@ let g:www_urls = {
          \ 'rails_rack' : 'http://guides.rubyonrails.org/rails_on_rack.html',
          \ 'rails_generators' : 'http://guides.rubyonrails.org/generators.html',
          \ 'rails_api' : 'http://api.rubyonrails.org/',
-         \ 'ruby' : 'http://www.ruby-doc.org/core-2.1.4/',
+         \ 'ruby' : 'http://www.ruby-doc.org/core-2.2.2/',
          \ 'factory_girl' : 'http://www.rubydoc.info/gems/factory_girl/file/GETTING_STARTED.md',
          \ 'capybara' : 'https://github.com/jnicklas/capybara',
          \ 'formtastic': 'https://github.com/justinfrench/formtastic',
@@ -293,10 +311,12 @@ let g:www_urls = {
          \ 'shoulda_matchers' : 'https://github.com/thoughtbot/shoulda-matchers',
          \ 'ransack' : 'https://github.com/activerecord-hackery/ransack',
          \ 'pi_ragas' : 'https://www.pivotaltracker.com/n/projects/1054406',
-         \ 'pi_almacen' : 'https://www.pivotaltracker.com/n/projects/1184952',
+         \ 'pi_ragas_general' : 'https://www.pivotaltracker.com/n/projects/1184952',
+         \ 'pi_ragas_almacen' : 'https://www.pivotaltracker.com/n/projects/1184954',
          \ 'pi_hastinik' : 'https://www.pivotaltracker.com/n/projects/1128094',
          \ 'timer' : 'https://www.toggl.com/app/timer',
          \ 'middleman' : 'http://middlemanapp.com/',
+         \ 'dragonfly' : 'http://markevans.github.io/dragonfly/',
          \ 'gh?' : 'https://github.com/search?utf8=%E2%9C%93&ref=simplesearch&q=',
          \ 'enes?' : 'http://www.wordreference.com/es/en/translation.asp?spen=',
          \ 'gem?' : 'http://rubygems.org/search?query=',
