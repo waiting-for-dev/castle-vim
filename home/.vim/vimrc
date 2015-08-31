@@ -69,12 +69,10 @@ NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'benmills/vimux'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'scrooloose/nerdcommenter' 
-NeoBundle 'Kris2k/ZoomWin-vim'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'sirver/ultisnips'
 NeoBundle 'honza/vim-snippets'
 "NeoBundle 'skalnik/vim-vroom'
-NeoBundle 'jeetsukumaran/vim-buffergator'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'chrisbra/NrrwRgn'
 NeoBundle 'terryma/vim-multiple-cursors'
@@ -88,9 +86,8 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'waiting-for-dev/vim-www'
 "NeoBundle '/home/marc/projects/vim/vim-www/', { 'type' : 'nosync' }
-"NeoBundle 'ludovicchabant/vim-gutentags'
+NeoBundle 'ludovicchabant/vim-gutentags'
 "NeoBundle '/home/marc/projects/test/vim-gutentags/', { 'type' : 'nosync' }
-NeoBundle 'waiting-for-dev/vim-gutentags', "mb_filetype_ctags_command"
 
 "vim-scripts repos
 "NeoBundle 'AutoTag'
@@ -316,10 +313,10 @@ let g:www_urls = {
          \ 'pi_hastinik' : 'https://www.pivotaltracker.com/n/projects/1128094',
          \ 'timer' : 'https://www.toggl.com/app/timer',
          \ 'middleman' : 'http://middlemanapp.com/',
-         \ 'dragonfly' : 'http://markevans.github.io/dragonfly/',
+         \ 'dragonfly' : 'markevans.github.io/dragonfly/',
          \ 'gh?' : 'https://github.com/search?utf8=%E2%9C%93&ref=simplesearch&q=',
          \ 'enes?' : 'http://www.wordreference.com/es/en/translation.asp?spen=',
-         \ 'gem?' : 'http://rubygems.org/search?query=',
+         \ 'gem?' : 'rubygems.org/search?query=',
          \ 't?' : 'https://translate.google.de/#ne/de/',
          \ 'o?' : 'https://www.omniref.com/?q=',
          \
