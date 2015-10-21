@@ -84,8 +84,8 @@ NeoBundle 'danchoi/ri.vim'
 NeoBundle 'gabebw/vim-spec-runner'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'waiting-for-dev/vim-www'
-"NeoBundle '/home/marc/projects/vim/vim-www/', { 'type' : 'nosync' }
+"NeoBundle 'waiting-for-dev/vim-www'
+NeoBundle '/home/marc/projects/vim/vim-www/', { 'type' : 'nosync' }
 NeoBundle 'ludovicchabant/vim-gutentags'
 "NeoBundle '/home/marc/projects/test/vim-gutentags/', { 'type' : 'nosync' }
 
@@ -318,7 +318,7 @@ let g:www_urls = {
          \ 'enes?' : 'http://www.wordreference.com/es/en/translation.asp?spen=',
          \ 'gem?' : 'rubygems.org/search?query=',
          \ 't?' : 'https://translate.google.de/#ne/de/',
-         \ 'o?' : 'https://www.omniref.com/?q=',
+         \ 'o?' : ['https://www.omniref.com/?q='],
          \
          \ }
 let g:www_sessions = { 'rails' : ['ruby', 'rails'] }
