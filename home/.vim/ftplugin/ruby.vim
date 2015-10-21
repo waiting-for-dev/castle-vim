@@ -44,7 +44,7 @@ if exists("b:rails_root")
             \   "related": "app/models/%s.rb",
             \   "alternate": "spec/policies/%s_policy_spec.rb",
             \   "template":
-            \     "class  %SPolicy < ApplicationPolicy \n\nend"
+            \     "class %SPolicy < ApplicationPolicy \n\nend"
             \ },
             \ "spec/policies/*_policy_spec.rb": {
             \   "command": "policyspec",
@@ -163,7 +163,7 @@ if exists("b:rails_root")
             \ "app/pdfs/*_pdf.rb": {
             \   "command": "pdf",
             \   "template":
-            \     "class  %SPdf\n\nend"
+            \     "class %SPdf\n\nend"
             \ },
             \}
 else
