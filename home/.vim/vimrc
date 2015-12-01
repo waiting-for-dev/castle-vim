@@ -270,6 +270,9 @@ command! Voh vp ~/.oh-my-zsh/custom/custom.zsh
 "mappint to close quickfix windows
 nnoremap <F8> :cclose<CR>
 
+"indent all file & return to current line
+nnoremap <F9> gg=G''
+
 let g:www_urls = {
          \ 'rails' : 'http://guides.rubyonrails.org/',
          \ 'rails_started' : 'http://guides.rubyonrails.org/getting_started.html',
