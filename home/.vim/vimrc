@@ -278,6 +278,9 @@ nnoremap <F9> gg=G''
 "clean hlsearch
 nnoremap <F12> :nohlsearch<CR>
 
+"force page refresing
+nnoremap <F5> :redraw!<CR>
+
 let g:www_urls = {
       \ 'rails' : 'http://guides.rubyonrails.org/',
       \ 'rails_started' : 'http://guides.rubyonrails.org/getting_started.html',
