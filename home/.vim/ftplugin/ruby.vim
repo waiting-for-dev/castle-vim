@@ -58,7 +58,7 @@ if exists("b:rails_root")
             \   "command": "validator",
             \   "alternate": "spec/validators/%s_validator_spec.rb",
             \   "template":
-            \     "class  %SValidator < ActiveModel::Validator\n  def validate(record)\n  end\nend"
+            \     "class %SValidator < ActiveModel::Validator\n  def validate(record)\n  end\nend"
             \ },
             \ "spec/validators/*_validator_spec.rb": {
             \   "command": "validatorspec",
@@ -70,7 +70,7 @@ if exists("b:rails_root")
             \   "command": "service",
             \   "alternate": "spec/services/%s_spec.rb",
             \   "template":
-            \     "class  %S\n\nend"
+            \     "class %S\n\nend"
             \ },
             \ "spec/services/*_spec.rb": {
             \   "command": "servicespec",
@@ -84,7 +84,7 @@ if exists("b:rails_root")
             \   "related": "app/models/%s_query.rb",
             \   "alternate": "spec/queries/%s_query_spec.rb",
             \   "template":
-            \     "class  %S\n\nend"
+            \     "class %SQuery\n\nend"
             \ },
             \ "spec/queries/*_query_spec.rb": {
             \   "command": "queryspec",
@@ -100,7 +100,7 @@ if exists("b:rails_root")
             \   "related": "app/models/%s.rb",
             \   "alternate": "test/serializers/%s_serializer_test.rb",
             \   "template":
-            \     "class  %SSerializer < Collectionable::Base \ndata :id\nend"
+            \     "class %SSerializer < Collectionable::Base \ndata :id\nend"
             \ },
             \ "test/serializers/*_serializer_test.rb": {
             \   "command": "serializertest",
@@ -108,7 +108,7 @@ if exists("b:rails_root")
             \   "related": "app/models/%s.rb",
             \   "alternate": "app/serializers/%s_serializer.rb",
             \   "template":
-            \     "require 'test_helper'\n\nclass  %SSerializerTest < ActiveSupport::TestCase\nend"
+            \     "require 'test_helper'\n\nclass %SSerializerTest < ActiveSupport::TestCase\nend"
             \ },
             \ "app/representers/*_representer.rb": {
             \   "command": "representer",
@@ -124,7 +124,7 @@ if exists("b:rails_root")
             \   "related": "app/models/%s.rb",
             \   "alternate": "app/representers/%s_representer.rb",
             \   "template":
-            \     "require 'rails_helper'\n\ndescribe  %SRepresenter\nend"
+            \     "require 'rails_helper'\n\ndescribe %SRepresenter\nend"
             \ },
             \ "app/requesters/*_requester.rb": {
             \   "command": "requester",
@@ -136,13 +136,37 @@ if exists("b:rails_root")
             \   "command": "requesterspec",
             \   "alternate": "app/requesters/%s_requester.rb",
             \   "template":
-            \     "require 'rails_helper'\n\ndescribe  %SRequester\nend"
+            \     "require 'rails_helper'\n\ndescribe %SRequester\nend"
+            \ },
+            \ "app/forms/*_form.rb": {
+            \   "command": "form",
+            \   "alternate": "spec/forms/%s_form_spec.rb",
+            \   "template":
+            \     "class %SForm\nend"
+            \ },
+            \ "spec/forms/*_form_spec.rb": {
+            \   "command": "formspec",
+            \   "alternate": "app/form/%s_form.rb",
+            \   "template":
+            \     "require 'rails_helper'\n\ndescribe %SForm\nend"
+            \ },
+            \ "app/decorators/*_decorator.rb": {
+            \   "command": "decorator",
+            \   "alternate": "spec/decorators/%s_decorator_spec.rb",
+            \   "template":
+            \     "class %SDecorator\nend"
+            \ },
+            \ "spec/decorators/*_decorator_spec.rb": {
+            \   "command": "decoratorspec",
+            \   "alternate": "app/decorators/%s_decorator.rb",
+            \   "template":
+            \     "require 'rails_helper'\n\ndescribe %SDecorator\nend"
             \ },
             \ "spec/jobs/*_job_spec.rb": {
             \   "command": "jobspec",
             \   "alternate": "app/jobs/%s_job.rb",
             \   "template":
-            \     "require 'rails_helper'\n\ndescribe  %SJob\nend"
+            \     "require 'rails_helper'\n\ndescribe %SJob\nend"
             \ },
             \ "spec/support/schemas/*.json": {
             \   "command": "jsonschema",
