@@ -316,6 +316,7 @@ let g:www_urls = {
          \ 'pi_ragas_almacen' : 'https://www.pivotaltracker.com/n/projects/1184954',
          \ 'pi_hastinik' : 'https://www.pivotaltracker.com/n/projects/1128094',
          \ 'timer' : 'https://www.toggl.com/app/timer',
+         \ 'heroku' : 'https://dashboard.heroku.com/',
          \ 'middleman' : 'http://middlemanapp.com/',
          \ 'dragonfly' : 'markevans.github.io/dragonfly/',
          \ 'gh?' : 'https://github.com/search?utf8=%E2%9C%93&ref=simplesearch&q=',
