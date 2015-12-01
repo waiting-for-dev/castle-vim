@@ -88,7 +88,7 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle '/home/marc/projects/vim/vim-www/', { 'type' : 'nosync' }
 NeoBundle 'ludovicchabant/vim-gutentags'
 "NeoBundle '/home/marc/projects/test/vim-gutentags/', { 'type' : 'nosync' }
-NeoBundle 'jodosha/vim-devnotes'
+"NeoBundle 'jodosha/vim-devnotes'
 
 "vim-scripts repos
 "NeoBundle 'AutoTag'
@@ -332,4 +332,4 @@ nnoremap <leader>tP :tabfirst<CR>
 nnoremap <leader>tN :tablast<CR>
 
 "devnotes
-set statusline +=%{devnotes#statusline()}
+"set statusline +=%{devnotes#statusline()}
