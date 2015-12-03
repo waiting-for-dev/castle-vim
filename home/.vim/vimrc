@@ -17,8 +17,6 @@ set smartcase "do smart case matching
 
 set incsearch "incremental search
 
-set hlsearch
-
 set mouse=a "enable mouse usage (all modes)
 
 set backspace=indent,eol,start "avoid backspace problems (http://vim.wikia.com/wiki/Backspace_and_delete_problems)
@@ -274,9 +272,6 @@ nnoremap <F8> :cclose<CR>
 
 "indent all file & return to current line
 nnoremap <F9> gg=G''
-
-"clean hlsearch
-nnoremap <F12> :nohlsearch<CR>
 
 "force page refresing
 nnoremap <F5> :redraw!<CR>
