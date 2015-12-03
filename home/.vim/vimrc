@@ -136,9 +136,6 @@ let g:syntastic_check_on_open = 1
 "vimwiki
 let g:vimwiki_list = [{'path': '~/wiki/', 'path_html': '~/wiki_html/', 'syntax': 'markdown', 'ext': '.md'}]
 
-"zoomwin
-map <C-x> :ZoomWin<CR>
-
 "ultisnips & youcompleteme
 "http://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme/18685821#18685821
 "https://github.com/Valloric/YouCompleteMe/issues/36
