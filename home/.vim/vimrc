@@ -267,8 +267,11 @@ command! Voh vp ~/.oh-my-zsh/custom/custom.zsh
 :autocmd BufReadPost quickfix nnoremap <buffer> r :Copen<CR>
 :autocmd BufReadPost quickfix nnoremap <buffer> R :Copen<CR>G
 
-"mappint to close quickfix windows
+"mapping to close quickfix windows
 nnoremap <F8> :cclose<CR>
+
+"toggle search matches highlighting
+:noremap <F12> :set hlsearch!<CR>
 
 "indent all file & return to current line
 nnoremap <F9> gg=G''
