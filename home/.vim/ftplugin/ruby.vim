@@ -44,7 +44,7 @@ if exists("b:rails_root")
             \   "related": "app/models/%s.rb",
             \   "alternate": "spec/policies/%s_policy_spec.rb",
             \   "template":
-            \     "class %SPolicy < ApplicationPolicy \n\nend"
+            \     "class %SPolicy < ApplicationPolicy\n\nend"
             \ },
             \ "spec/policies/*_policy_spec.rb": {
             \   "command": "policyspec",
