@@ -166,7 +166,7 @@ if exists("b:rails_root")
             \   "command": "jobspec",
             \   "alternate": "app/jobs/%s_job.rb",
             \   "template":
-            \     "require 'rails_helper'\n\ndescribe %SJob\nend"
+            \     "require 'rails_helper'\n\ndescribe %SJob do\nend"
             \ },
             \ "spec/support/schemas/*.json": {
             \   "command": "jsonschema",
