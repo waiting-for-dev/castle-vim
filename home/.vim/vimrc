@@ -272,7 +272,7 @@ nnoremap <F8> :cclose<CR>
 :noremap <F12> :set hlsearch!<CR>
 
 "indent all file & return to current line
-nnoremap <F9> gg=G''
+nnoremap <F6> gg=G''
 
 "force page refresing
 nnoremap <F5> :redraw!<CR>
