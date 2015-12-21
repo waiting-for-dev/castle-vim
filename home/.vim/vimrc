@@ -327,7 +327,8 @@ let g:www_urls = {
       \ 'enes?' : 'http://www.wordreference.com/es/en/translation.asp?spen=',
       \ 'gem?' : 'rubygems.org/search?query=',
       \ 't?' : 'https://translate.google.de/#ne/de/',
-      \ 'o?' : ['https://www.omniref.com/?q='],
+      \ 'o?' : 'https://www.omniref.com/?q=',
+      \ 'rails?' : 'http://api.rubyonrails.org/?q=',
       \
       \ }
 let g:www_sessions = { 'rails' : ['ruby', 'rails'] }
