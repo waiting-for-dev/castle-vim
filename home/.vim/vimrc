@@ -183,6 +183,7 @@ nmap <leader>gr :Gread<CR>
 nmap <leader>gw :Gwrite<CR>
 nmap <leader>gd :Gdiff<CR>
 nmap <leader>g. :Git add .<CR>
+nmap <leader>gm :Git commit --amend<CR>
 
 "NERDTree
 noremap <leader>n :NERDTreeToggle<CR>
