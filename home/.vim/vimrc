@@ -345,4 +345,4 @@ nnoremap <leader>tN :tablast<CR>
 "set statusline +=%{devnotes#statusline()}
 
 "Easily find todo's
-nnoremap <leader><leader>t :Ggrep TODO<CR>
+nnoremap <leader><leader>t :Ggrep TODO:<CR>
