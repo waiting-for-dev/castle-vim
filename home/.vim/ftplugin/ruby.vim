@@ -1,7 +1,9 @@
 "ruby 2 indent rule
 set tabstop=2 shiftwidth=2 softtabstop=2
+
 "autoclose end
 imap <C-e> <CR><CR>end<Esc>-cc
+
 "some abbreviation
 abbreviate saop save_and_open_page
 abbreviate bp binding.pry
@@ -199,8 +201,7 @@ else
    map <Leader>l <Plug>RunMostRecentSpec
 endif
 
-
-"https://github.com/majutsushi/tagbar/wiki#ruby
+" https://github.com/majutsushi/tagbar/wiki#ruby
 " use 'ripper-tags' (if available) to generate ruby ctags with tagbar
 if executable('ripper-tags')
   " Configure Tagbar to user ripper-tags with ruby
@@ -216,17 +217,6 @@ if executable('ripper-tags')
         \ 'ctagsbin': 'ripper-tags',
         \ 'ctagsargs': ['-f', '-']
         \ }
+  " Auto-generate tags with ripper-tags
   let g:gutentags_ctags_executable_ruby = 'ripper-tags'
 endif
-"let g:tagbar_type_ruby = {
-"      \ 'kinds' : [
-"      \ 'm:modules',
-"      \ 'c:classes',
-"      \ 'd:describes',
-"      \ 'C:contexts',
-"      \ 'f:methods',
-"      \ 'F:singleton methods'
-"      \ ]
-"      \ }
-"let g:tabgbar_ctags_bin="ripper-tags" 
-

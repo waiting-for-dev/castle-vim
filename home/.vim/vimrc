@@ -1,8 +1,7 @@
-"""SETTINGS"""
-
+""" SETTINGS """
 syntax on "enable syntax highlighting
 
-"jump to last position when reopening a file
+" jump to last position when reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
@@ -27,7 +26,7 @@ set ruler "Show column and line position
 
 let mapleader=','
 
-"""START NEOBUNDLE CONFIGURATION (https://github.com/Shougo/neobundle.vim)"""
+""" START NEOBUNDLE CONFIGURATION (https://github.com/Shougo/neobundle.vim) """
 
 if has('vim_starting')
   set rtp+=~/.vim/bundle/neobundle.vim/ "add neobundle path to runtimepath
@@ -35,16 +34,15 @@ end
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 
-"neobundle intself
+" neobundle intself
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-"GitHub repos
+" GitHub repos
 NeoBundle 'othree/html5.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tomtom/tlib_vim'
 NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'tpope/vim-haml'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'leshill/vim-json'
 NeoBundle 'tpope/vim-rails'
@@ -59,22 +57,15 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'othree/xml.vim'
-NeoBundle 'embear/vim-localvimrc'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'vimwiki/vimwiki'
-NeoBundle 'endel/vim-github-colorscheme'
 NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'christoomey/vim-tmux-navigator'
-NeoBundle 'benmills/vimux'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'scrooloose/nerdcommenter' 
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'sirver/ultisnips'
 NeoBundle 'honza/vim-snippets'
-"NeoBundle 'skalnik/vim-vroom'
 NeoBundle 'majutsushi/tagbar'
-NeoBundle 'chrisbra/NrrwRgn'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'tpope/vim-unimpaired'
@@ -84,17 +75,13 @@ NeoBundle 'danchoi/ri.vim'
 NeoBundle 'gabebw/vim-spec-runner'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'kien/ctrlp.vim'
-"NeoBundle 'waiting-for-dev/vim-www'
-NeoBundle '/home/marc/projects/vim/vim-www/', { 'type' : 'nosync' }
+NeoBundle 'waiting-for-dev/vim-www'
+" NeoBundle '/home/marc/projects/vim/vim-www/', { 'type' : 'nosync' }
 NeoBundle 'ludovicchabant/vim-gutentags'
-"NeoBundle '/home/marc/projects/test/vim-gutentags/', { 'type' : 'nosync' }
-"NeoBundle 'jodosha/vim-devnotes'
 NeoBundle 'elixir-lang/vim-elixir'
 
-"vim-scripts repos
-"NeoBundle 'AutoTag'
+" vim-scripts repos
 NeoBundle 'VimRepress'
-NeoBundle 'loremipsum'
 NeoBundle 'CSApprox'
 
 call neobundle#end()
@@ -103,29 +90,12 @@ NeoBundleCheck
 
 filetype plugin indent on
 
-"""PLUGINS CONFIGURATION"""
+""" PLUGINS CONFIGURATION """
 
-"tagbar
+" tagbar
 nmap <leader>g :TagbarToggle<CR>
 
-"gtranslate
-let g:goog_user_conf = [{'langpair': 'es|en', 'v_key': 'T'}]
-
-"localvimrc
-let g:localvimrc_ask = 0 "do not ask to load local vimrc
-
-"loremipsum
-let g:loremipsum_marker = {}
-let g:loremipsum_paragraph_template = {
-      \ 'html': '<p>%s</p>',
-      \ 'php': '<p>%s</p>',
-      \ 'slim': 'p %s',
-      \ }
-
-"youcompleteme
-"let g:EclimCompletionMethod = 'omnifunc' "if using eclim uncomment this line
-
-"syntastic
+" syntastic
 let g:syntastic_mode_map = { 'mode': 'active',
       \ 'active_filetypes': ['php', 'ruby', 'css', 'html'], }
 let g:syntastic_php_checkers = ['php']
@@ -134,27 +104,27 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 1
 
-"vimwiki
+" vimwiki
 let g:vimwiki_list = [{'path': '~/wiki/', 'path_html': '~/wiki_html/', 'syntax': 'markdown', 'ext': '.md'}]
 
-"ultisnips & youcompleteme
-"http://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme/18685821#18685821
-"https://github.com/Valloric/YouCompleteMe/issues/36
-"function! g:UltiSnips_Complete()
-"  call UltiSnips#ExpandSnippet()
-"  if g:ulti_expand_res == 0
-"    if pumvisible()
-"      return "\<C-n>"
-"    else
-"      call UltiSnips#JumpForwards()
-"      if g:ulti_jump_forwards_res == 0
-"        return "\<TAB>"
-"      endif
-"    endif
-"  endif
-"  return ""
-"endfunction
-"au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+" ultisnips & youcompleteme
+" http://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme/18685821#18685821
+" https://github.com/Valloric/YouCompleteMe/issues/36
+" function! g:UltiSnips_Complete()
+"   call UltiSnips#ExpandSnippet()
+"   if g:ulti_expand_res == 0
+"     if pumvisible()
+"       return "\<C-n>"
+"     else
+"       call UltiSnips#JumpForwards()
+"       if g:ulti_jump_forwards_res == 0
+"         return "\<TAB>"
+"       endif
+"     endif
+"   endif
+"   return ""
+" endfunction
+" au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
@@ -162,17 +132,9 @@ let g:UltiSnipsListSnippets="<c-e>"
 " this mapping Enter key to <C-y> to chose the current highlight item 
 " and close the selection list, same as other IDEs.
 " CONFLICT with some plugins like tpope/Endwise
-"inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-"vim-vroom
-"let g:vroom_use_spring=1
-"let g:vroom_use_vimux=1
-
-"buffergator
-let g:buffergator_viewport_split_policy='T'
-let g:buffergator_sort_regime='mru'
-
-"fugitive
+" fugitive
 nmap <leader>gg :Git 
 nmap <leader>gs :Gstatus<CR>
 nmap <leader>gc :Gcommit<CR>
@@ -182,33 +144,22 @@ nmap <leader>gd :Gdiff<CR>
 nmap <leader>g. :Git add .<CR>
 nmap <leader>gm :Git commit --amend<CR>
 
-"NERDTree
+" NERDTree
 noremap <leader>n :NERDTreeToggle<CR>
 
-"""COLOR SCHEMES"""
-"if $TERM == 'xterm'
+""" COLOR SCHEMES """
+" if $TERM == 'xterm'
 set t_Co=256
-"if using solarized, uncomment following three lines
-"set background=light
 colorscheme solarized
-"if using github, uncomment following three lines
-"colorscheme  github
-"set background=light
-"colorscheme tomorrow
-"source $HOME/.vim/colorschemes/tomorrow/colors/Tomorrow-Night-Blue.vim
-"endif
-" http://sunaku.github.io/vim-256color-bce.html
-"set t_ut=
 
-"ri
+" ri
 nnoremap  ,dr :call ri#OpenSearchPrompt(0)<cr> " horizontal split
 nnoremap  ,dR :call ri#OpenSearchPrompt(1)<cr> " vertical split
 nnoremap  ,dk :call ri#LookupNameUnderCursor()<cr> " keyword lookup
 
-"CtrlP
-"Remeber last mode (https://github.com/kien/ctrlp.vim/issues/330)
+" CtrlP
+" Remeber last mode (https://github.com/kien/ctrlp.vim/issues/330)
 let g:ctrlp_cmd = 'call CallCtrlP()'
-
 func! CallCtrlP()
   if exists('s:called_ctrlp')
     CtrlPLastMode
@@ -218,77 +169,74 @@ func! CallCtrlP()
   endif
 endfunc
 
-"""OTHER OPTIONS"""
-
-set laststatus=2 "Always show status line
-
-"when writting e-mails with gmail with <<It's All Text>> Firefox plugin
-"(https://addons.mozilla.org/En-us/firefox/addon/its-all-text/)
-"set textwidth to 80 characters
-autocmd BufNewFile,BufRead mail.google.com* set tw=80
-
-"for writing Calibre recipes (http://manual.calibre-ebook.com/news.html)
-"which are python classes
-autocmd BufNewFile,BufRead *.recipe set ft=python
-
-"rabl templates are ruby files
-autocmd BufNewFile,BufRead *.rabl set ft=ruby
-
-"load some personal configuration I don't want in a public repository
-if filereadable($HOME.'/.vim/vimrc_private')
-  source $HOME/.vim/vimrc_private
-endif
-
-"encryption
-set cm=blowfish "use blowfish for encryption
-autocmd BufNewFile,BufRead *.enc set nobackup noswapfile nowritebackup viminfo= "enc extension will be used for encrypted files
-
-"git
-autocmd Filetype gitcommit setlocal spell textwidth=72 "commit messages with spell checking and textwidth
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P "add git branch to the status line with fugitive
-
-"command to open easily this file
-command! Evimrc e ~/.vim/vimrc
-command! Svimrc sp ~/.vim/vimrc
-command! Vvimrc vs ~/.vim/vimrc
-"command to reload local vim configuration
-command! Vimrc source $MYVIMRC
-
-"command to open easily my main zsh config file
-command! Eoh e ~/.oh-my-zsh/custom/custom.zsh
-command! Soh sp ~/.oh-my-zsh/custom/custom.zsh
-command! Voh vp ~/.oh-my-zsh/custom/custom.zsh
-
-"command to reload quickfix window and to reload and jump to last line
-:autocmd BufReadPost quickfix nnoremap <buffer> r :Copen<CR>
-:autocmd BufReadPost quickfix nnoremap <buffer> R :Copen<CR>G
-
-"mapping to close quickfix windows
-nnoremap <F8> :cclose<CR>
-
-"toggle search matches highlighting
-:noremap <F12> :set hlsearch!<CR>
-
-"indent all file & return to current line
-nnoremap <F6> gg=G''
-
-"force page refresing
-nnoremap <F5> :redraw!<CR>
-
-"www.vim
+" www.vim
 if filereadable($HOME.'/.vim/www_urls.vim')
   source $HOME/.vim/www_urls.vim
 endif
 let g:www_default_search_engine = 'g?'
 
-"tab navigation
+" dispatch
+nnoremap <leader>l :Dispatch -<CR>
+
+""" OTHER OPTIONS """
+
+set laststatus=2 "Always show status line
+
+" when writting e-mails with gmail with <<It's All Text>> Firefox plugin
+" (https://addons.mozilla.org/En-us/firefox/addon/its-all-text/)
+" set textwidth to 80 characters
+autocmd BufNewFile,BufRead mail.google.com* set tw=80
+
+" for writing Calibre recipes (http://manual.calibre-ebook.com/news.html)
+" which are python classes
+autocmd BufNewFile,BufRead *.recipe set ft=python
+
+" rabl templates are ruby files
+autocmd BufNewFile,BufRead *.rabl set ft=ruby
+
+" load some personal configuration I don't want in a public repository
+if filereadable($HOME.'/.vim/vimrc_private')
+  source $HOME/.vim/vimrc_private
+endif
+
+" encryption
+set cm=blowfish "use blowfish for encryption
+autocmd BufNewFile,BufRead *.enc set nobackup noswapfile nowritebackup viminfo= "enc extension will be used for encrypted files
+
+" git
+autocmd Filetype gitcommit setlocal spell textwidth=72 "commit messages with spell checking and textwidth
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P "add git branch to the status line with fugitive
+
+" command to open easily this file
+command! Evimrc e ~/.vim/vimrc
+command! Svimrc sp ~/.vim/vimrc
+command! Vvimrc vs ~/.vim/vimrc
+
+" command to reload local vim configuration
+command! Vimrc source $MYVIMRC
+
+" command to open easily my main zsh config file
+command! Eoh e ~/.oh-my-zsh/custom/custom.zsh
+command! Soh sp ~/.oh-my-zsh/custom/custom.zsh
+command! Voh vp ~/.oh-my-zsh/custom/custom.zsh
+
+" mapping to close quickfix windows
+nnoremap <F8> :cclose<CR>
+
+" toggle search matches highlighting
+:noremap <F12> :set hlsearch!<CR>
+
+" indent all file & return to current line
+nnoremap <F6> gg=G''
+
+" force page refresing
+nnoremap <F5> :redraw!<CR>
+
+" tab navigation
 nnoremap <leader>tp :tabprevious<CR>
 nnoremap <leader>tn :tabNext<CR>
 nnoremap <leader>tP :tabfirst<CR>
 nnoremap <leader>tN :tablast<CR>
 
-"dispatch
-nnoremap <leader>l :Dispatch -<CR>
-
-"Easily find todo's
+" Easily find todo's
 nnoremap <leader><leader>t :Ggrep TODO:<CR>
