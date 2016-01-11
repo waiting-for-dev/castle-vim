@@ -1,11 +1,7 @@
 """ SETTINGS """
+
 " Enable syntax highlighting
 syntax on
-
-" Jump to last position when reopening a file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
 
 " Number of spaces for (auto)indent
 set shiftwidth=2
@@ -36,6 +32,9 @@ set ruler
 
 " Define mapleader
 let mapleader = ','
+
+" Always show status line
+set laststatus=2
 
 """ START NEOBUNDLE CONFIGURATION (https://github.com/Shougo/neobundle.vim) """
 
@@ -184,6 +183,72 @@ NeoBundleCheck
 
 filetype plugin indent on
 
+""" OTHER OPTIONS """
+
+" when writting e-mails with gmail with <<It's All Text>> Firefox plugin
+" (https://addons.mozilla.org/En-us/firefox/addon/its-all-text/)
+" set textwidth to 80 characters
+autocmd BufNewFile,BufRead mail.google.com* set tw=80
+
+" for writing Calibre recipes (http://manual.calibre-ebook.com/news.html)
+" which are python classes
+autocmd BufNewFile,BufRead *.recipe set ft=python
+
+" rabl templates are ruby files
+autocmd BufNewFile,BufRead *.rabl set ft=ruby
+
+" load some personal configuration I don't want in a public repository
+if filereadable($HOME.'/.vim/vimrc_private')
+  source $HOME/.vim/vimrc_private
+endif
+
+" encryption
+set cm=blowfish "use blowfish for encryption
+autocmd BufNewFile,BufRead *.enc set nobackup noswapfile nowritebackup viminfo= "enc extension will be used for encrypted files
+
+" git
+autocmd Filetype gitcommit setlocal spell textwidth=72 "commit messages with spell checking and textwidth
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P "add git branch to the status line with fugitive
+
+" command to open easily this file
+command! Evimrc e ~/.vim/vimrc
+command! Svimrc sp ~/.vim/vimrc
+command! Vvimrc vs ~/.vim/vimrc
+
+" command to reload local vim configuration
+command! Vimrc source $MYVIMRC
+
+" command to open easily my main zsh config file
+command! Eoh e ~/.oh-my-zsh/custom/custom.zsh
+command! Soh sp ~/.oh-my-zsh/custom/custom.zsh
+command! Voh vp ~/.oh-my-zsh/custom/custom.zsh
+
+" mapping to close quickfix windows
+nnoremap <F8> :cclose<CR>
+
+" toggle search matches highlighting
+:noremap <F12> :set hlsearch!<CR>
+
+" indent all file & return to current line
+nnoremap <F6> gg=G''
+
+" force page refresing
+nnoremap <F5> :redraw!<CR>
+
+" tab navigation
+nnoremap <leader>tp :tabprevious<CR>
+nnoremap <leader>tn :tabNext<CR>
+nnoremap <leader>tP :tabfirst<CR>
+nnoremap <leader>tN :tablast<CR>
+
+" Easily find todo's
+nnoremap <leader><leader>t :Ggrep TODO:<CR>
+
+" Jump to last position when reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
 """ PLUGINS CONFIGURATION """
 
 " tagbar
@@ -271,66 +336,3 @@ let g:www_default_search_engine = 'g?'
 
 " dispatch
 nnoremap <leader>l :Dispatch -<CR>
-
-""" OTHER OPTIONS """
-
-set laststatus=2 "Always show status line
-
-" when writting e-mails with gmail with <<It's All Text>> Firefox plugin
-" (https://addons.mozilla.org/En-us/firefox/addon/its-all-text/)
-" set textwidth to 80 characters
-autocmd BufNewFile,BufRead mail.google.com* set tw=80
-
-" for writing Calibre recipes (http://manual.calibre-ebook.com/news.html)
-" which are python classes
-autocmd BufNewFile,BufRead *.recipe set ft=python
-
-" rabl templates are ruby files
-autocmd BufNewFile,BufRead *.rabl set ft=ruby
-
-" load some personal configuration I don't want in a public repository
-if filereadable($HOME.'/.vim/vimrc_private')
-  source $HOME/.vim/vimrc_private
-endif
-
-" encryption
-set cm=blowfish "use blowfish for encryption
-autocmd BufNewFile,BufRead *.enc set nobackup noswapfile nowritebackup viminfo= "enc extension will be used for encrypted files
-
-" git
-autocmd Filetype gitcommit setlocal spell textwidth=72 "commit messages with spell checking and textwidth
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P "add git branch to the status line with fugitive
-
-" command to open easily this file
-command! Evimrc e ~/.vim/vimrc
-command! Svimrc sp ~/.vim/vimrc
-command! Vvimrc vs ~/.vim/vimrc
-
-" command to reload local vim configuration
-command! Vimrc source $MYVIMRC
-
-" command to open easily my main zsh config file
-command! Eoh e ~/.oh-my-zsh/custom/custom.zsh
-command! Soh sp ~/.oh-my-zsh/custom/custom.zsh
-command! Voh vp ~/.oh-my-zsh/custom/custom.zsh
-
-" mapping to close quickfix windows
-nnoremap <F8> :cclose<CR>
-
-" toggle search matches highlighting
-:noremap <F12> :set hlsearch!<CR>
-
-" indent all file & return to current line
-nnoremap <F6> gg=G''
-
-" force page refresing
-nnoremap <F5> :redraw!<CR>
-
-" tab navigation
-nnoremap <leader>tp :tabprevious<CR>
-nnoremap <leader>tn :tabNext<CR>
-nnoremap <leader>tP :tabfirst<CR>
-nnoremap <leader>tN :tablast<CR>
-
-" Easily find todo's
-nnoremap <leader><leader>t :Ggrep TODO:<CR>
