@@ -38,50 +38,133 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " GitHub repos
+
+" Better html5 support
 NeoBundle 'othree/html5.vim'
+
+" File navigation
 NeoBundle 'scrooloose/nerdtree'
+
+" Surround text
 NeoBundle 'tpope/vim-surround'
+
+" Utility functions used by other plugins
 NeoBundle 'tomtom/tlib_vim'
+
+" Better CSS syntax
 NeoBundle 'hail2u/vim-css3-syntax'
+
+" Better JS support
 NeoBundle 'pangloss/vim-javascript'
+
+" Better JSON support
 NeoBundle 'leshill/vim-json'
+
+" Utilities for rails
 NeoBundle 'tpope/vim-rails'
+
+" Utilities for ruby and gems development
 NeoBundle 'tpope/vim-rake'
+
+" Project configuration
 NeoBundle 'tpope/vim-projectionist'
+
+" Utilities for bundle
 NeoBundle 'tpope/vim-bundler'
+
+" Ruby configuration
 NeoBundle 'vim-ruby/vim-ruby'
+
+" Slim support
 NeoBundle 'slim-template/vim-slim'
+
+" Twig support
 NeoBundle 'evidens/vim-twig'
+
+" Search text under visual selection
 NeoBundle 'bronson/vim-visual-star-search'
+
+" Coffee Script support
 NeoBundle 'kchmck/vim-coffee-script'
+
+" Easily align tables
 NeoBundle 'godlygeek/tabular'
+
+" Color scheme
 NeoBundle 'altercation/vim-colors-solarized'
+
+" XML utilities
 NeoBundle 'othree/xml.vim'
+
+" Auto-completion for quotes, parens, brackets, etc.
 NeoBundle 'Raimondi/delimitMate'
+
+" Personal wiki
 NeoBundle 'vimwiki/vimwiki'
+
+" Autocompletion
 NeoBundle 'Valloric/YouCompleteMe'
+
+" Syntax error detection
 NeoBundle 'scrooloose/syntastic'
+
+" Git client
 NeoBundle 'tpope/vim-fugitive'
+
+" Easily search for, substitute, and abbreviate multiple variants of a word 
 NeoBundle 'tpope/vim-abolish'
+
+" Snippets generation
 NeoBundle 'sirver/ultisnips'
+
+" Built snippets
 NeoBundle 'honza/vim-snippets'
+
+" Tag navigation in a side window
 NeoBundle 'majutsushi/tagbar'
+
+" Multiple cursors
 NeoBundle 'terryma/vim-multiple-cursors'
+
+" More motion commands
 NeoBundle 'Lokaltog/vim-easymotion'
+
+" Maps for bidirectional commands
 NeoBundle 'tpope/vim-unimpaired'
+
+" Enable repeating supported plugin maps with "."
 NeoBundle 'tpope/vim-repeat'
+
+" Smart command dispatching
 NeoBundle 'tpope/vim-dispatch', { 'rev': 'repeat-last' }
+
+" Ruby ri in vim
 NeoBundle 'danchoi/ri.vim'
+
+" Spec runner for ruby and js
 NeoBundle 'gabebw/vim-spec-runner'
+
+" Git diff in the gutter
 NeoBundle 'airblade/vim-gitgutter'
+
+" File, buffer, mru, tag finder
 NeoBundle 'kien/ctrlp.vim'
+
+" Open urls, favorites and searchs from vim
 NeoBundle 'waiting-for-dev/vim-www'
 " NeoBundle '/home/marc/projects/vim/vim-www/', { 'type' : 'nosync' }
+
+" Auto-generate tag file
 NeoBundle 'ludovicchabant/vim-gutentags'
+
+" Elixir support
 NeoBundle 'elixir-lang/vim-elixir'
 
 " vim-scripts repos
+" Publish to wordpress
 NeoBundle 'VimRepress'
+
+" Makes GVim-only colorschemes Just Work in terminal Vim
 NeoBundle 'CSApprox'
 
 call neobundle#end()
