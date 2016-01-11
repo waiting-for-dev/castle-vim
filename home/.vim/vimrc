@@ -82,6 +82,9 @@ NeoBundle 'tpope/vim-projectionist'
 " Utilities for bundle
 NeoBundle 'tpope/vim-bundler'
 
+" Navigate painlessly between vim/tmux windows
+NeoBundle 'christoomey/vim-tmux-navigator'
+
 " Ruby configuration
 NeoBundle 'vim-ruby/vim-ruby'
 
