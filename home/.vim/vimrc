@@ -79,7 +79,7 @@ NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-dispatch'
+NeoBundle 'tpope/vim-dispatch', { 'rev': 'repeat-last' }
 NeoBundle 'danchoi/ri.vim'
 NeoBundle 'gabebw/vim-spec-runner'
 NeoBundle 'airblade/vim-gitgutter'
@@ -167,9 +167,6 @@ let g:UltiSnipsListSnippets="<c-e>"
 "vim-vroom
 "let g:vroom_use_spring=1
 "let g:vroom_use_vimux=1
-
-"vimux
-map <Leader>l :VimuxRunLastCommand<CR>
 
 "buffergator
 let g:buffergator_viewport_split_policy='T'
@@ -341,8 +338,8 @@ nnoremap <leader>tn :tabNext<CR>
 nnoremap <leader>tP :tabfirst<CR>
 nnoremap <leader>tN :tablast<CR>
 
-"devnotes
-"set statusline +=%{devnotes#statusline()}
+"dispatch
+nnoremap <leader>l :Dispatch -<CR>
 
 "Easily find todo's
 nnoremap <leader><leader>t :Ggrep TODO:<CR>
