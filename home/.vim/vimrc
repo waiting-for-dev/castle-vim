@@ -1,30 +1,41 @@
 """ SETTINGS """
-syntax on "enable syntax highlighting
+" Enable syntax highlighting
+syntax on
 
-" jump to last position when reopening a file
+" Jump to last position when reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-set shiftwidth=2 "number of spaces for (auto)indent
+" Number of spaces for (auto)indent
+set shiftwidth=2
 
-set expandtab "use spaces instead of tabs
+" Use spaces instead of tabs
+set expandtab
 
-set ignorecase "do case insensitive matching
+" Do case insensitive matching
+set ignorecase
 
-set smartcase "do smart case matching
+" Do smart case matching
+set smartcase
 
-set incsearch "incremental search
+" Incremental search
+set incsearch
 
-set mouse=a "enable mouse usage (all modes)
+" Enable mouse usage (all modes)
+set mouse=a
 
-set backspace=indent,eol,start "avoid backspace problems (http://vim.wikia.com/wiki/Backspace_and_delete_problems)
+" Avoid backspace problems (http://vim.wikia.com/wiki/Backspace_and_delete_problems)
+set backspace=indent,eol,start
 
-set vb "silent bell
+" Silent bell
+set vb
 
-set ruler "Show column and line position
+" Show column and line position
+set ruler
 
-let mapleader=','
+" Define mapleader
+let mapleader = ','
 
 """ START NEOBUNDLE CONFIGURATION (https://github.com/Shougo/neobundle.vim) """
 
