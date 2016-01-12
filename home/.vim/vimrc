@@ -173,6 +173,9 @@ NeoBundle 'ludovicchabant/vim-gutentags'
 " Elixir support
 NeoBundle 'elixir-lang/vim-elixir'
 
+" Comment stuff
+NeoBundle 'tpope/vim-commentary'
+
 " vim-scripts repos
 " Publish to wordpress
 NeoBundle 'VimRepress'
