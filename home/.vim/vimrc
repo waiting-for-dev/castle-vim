@@ -305,6 +305,8 @@ nmap <leader>gs :Gstatus<CR>
 nmap <leader>gc :Gcommit<CR>
 nmap <leader>gr :Gread<CR>
 nmap <leader>gw :Gwrite<CR>
+nmap <leader>gW :Gwrite<CR>:Gcommit<CR>
+nmap <leader>gM :Gwrite<CR>:Git commit --amend<CR>
 nmap <leader>gd :Gdiff<CR>
 nmap <leader>g. :Git add .<CR>
 nmap <leader>gm :Git commit --amend<CR>
