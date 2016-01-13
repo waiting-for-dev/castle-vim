@@ -310,6 +310,7 @@ nmap <leader>gM :Gwrite<CR>:Git commit --amend<CR>
 nmap <leader>gd :Gdiff<CR>
 nmap <leader>g. :Git add .<CR>
 nmap <leader>gm :Git commit --amend<CR>
+nmap <leader>gA :Git commit -a<CR>
 
 " NERDTree
 noremap <leader>n :NERDTreeToggle<CR>
