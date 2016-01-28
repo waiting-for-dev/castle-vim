@@ -139,9 +139,6 @@ NeoBundle 'majutsushi/tagbar'
 " Multiple cursors
 NeoBundle 'terryma/vim-multiple-cursors'
 
-" More motion commands
-NeoBundle 'Lokaltog/vim-easymotion'
-
 " Maps for bidirectional commands
 NeoBundle 'tpope/vim-unimpaired'
 
