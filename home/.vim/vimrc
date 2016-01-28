@@ -173,6 +173,9 @@ NeoBundle 'elixir-lang/vim-elixir'
 " Comment stuff
 NeoBundle 'tpope/vim-commentary'
 
+" Status/tabline
+NeoBundle 'vim-airline/vim-airline'
+
 " vim-scripts repos
 " Publish to wordpress
 NeoBundle 'VimRepress'
@@ -342,3 +345,6 @@ let g:www_default_search_engine = 'g?'
 
 " dispatch
 nnoremap <leader>l :Dispatch -<CR>
+
+" airline
+let g:airline_theme = 'base16color'
