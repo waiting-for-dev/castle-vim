@@ -176,6 +176,9 @@ NeoBundle 'tpope/vim-commentary'
 " Status/tabline
 NeoBundle 'vim-airline/vim-airline'
 
+" Themes for vim-airline
+NeoBundle 'vim-airline/vim-airline-themes'
+
 " vim-scripts repos
 " Publish to wordpress
 NeoBundle 'VimRepress'
