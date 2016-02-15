@@ -173,6 +173,9 @@ NeoBundle 'elixir-lang/vim-elixir'
 " Comment stuff
 NeoBundle 'tpope/vim-commentary'
 
+" Codeclimate integration
+NeoBundle 'wfleming/vim-codeclimate'
+
 " vim-scripts repos
 " Publish to wordpress
 NeoBundle 'VimRepress'
@@ -342,3 +345,8 @@ let g:www_default_search_engine = 'g?'
 
 " dispatch
 nnoremap <leader>l :Dispatch -<CR>
+
+" codeclimate
+nmap <Leader>sp :CodeClimateAnalyzeProject<CR>
+nmap <Leader>so :CodeClimateAnalyzeOpenFiles<CR>
+nmap <Leader>sf :CodeClimateAnalyzeCurrentFile<CR>
