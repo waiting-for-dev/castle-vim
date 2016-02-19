@@ -36,6 +36,9 @@ let mapleader = ','
 " Always show status line
 set laststatus=2
 
+" Do not highlight search results
+set nohlsearch
+
 """ START NEOBUNDLE CONFIGURATION (https://github.com/Shougo/neobundle.vim) """
 
 if has('vim_starting')
