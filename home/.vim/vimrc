@@ -212,8 +212,11 @@ if filereadable($HOME.'/.vim/vimrc_private')
 endif
 
 " encryption
-set cm=blowfish "use blowfish for encryption
-autocmd BufNewFile,BufRead *.enc set nobackup noswapfile nowritebackup viminfo= "enc extension will be used for encrypted files
+" https://github.com/neovim/neovim/issues/701
+if !has('nvim')
+  set cm=blowfish "use blowfish for encryption
+  autocmd BufNewFile,BufRead *.enc set nobackup noswapfile nowritebackup viminfo= "enc extension will be used for encrypted files
+end
 
 " git
 autocmd Filetype gitcommit setlocal spell textwidth=72 "commit messages with spell checking and textwidth
