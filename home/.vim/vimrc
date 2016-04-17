@@ -154,9 +154,6 @@ NeoBundle 'tpope/vim-dispatch', { 'rev': 'repeat-last' }
 " Ruby ri in vim
 NeoBundle 'danchoi/ri.vim'
 
-" Spec runner for ruby and js
-NeoBundle 'gabebw/vim-spec-runner'
-
 " Git diff in the gutter
 NeoBundle 'airblade/vim-gitgutter'
 
@@ -178,6 +175,14 @@ NeoBundle 'tpope/vim-commentary'
 
 " Codeclimate integration
 NeoBundle 'wfleming/vim-codeclimate'
+
+" Run your tests at the speed of thought
+NeoBundle 'janko-m/vim-test'
+
+" Wrapper of some neovim's :terminal functions
+if has('nvim')
+  NeoBundle 'kassio/neoterm'
+end
 
 " vim-scripts repos
 " Publish to wordpress
@@ -356,6 +361,19 @@ nnoremap <leader>l :Dispatch -<CR>
 nmap <Leader>sp :CodeClimateAnalyzeProject<CR>
 nmap <Leader>so :CodeClimateAnalyzeOpenFiles<CR>
 nmap <Leader>sf :CodeClimateAnalyzeCurrentFile<CR>
+
+" vim-test
+nmap <silent> <leader>r :TestNearest<CR>
+nmap <silent> <leader>R :TestFile<CR>
+nmap <silent> <leader>A :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+" let g:test#preserve_screen = 1
+if has('nvim')
+  let test#strategy = "neoterm"
+else
+  let test#strategy = "dispatch"
+end
 
 """ NEOVIM SPECIFIC CONFIGURATION """
 " Transparently changing windows from a terminal buffer

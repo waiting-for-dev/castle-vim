@@ -10,12 +10,6 @@ abbreviate bp binding.pry
 
 "vimrails
 if exists("b:rails_root")
-   "run current test
-   map <leader>r :.Runner<CR>
-   "run current file tests
-   map <leader>R :Rrunner<CR>
-   "run all test suite in the background
-   map <leader>A :Dispatch! :Runner spec<CR>
    "run current file rake
    map <leader>K :Rake<CR>
    "run current line rake
@@ -192,13 +186,6 @@ if exists("b:rails_root")
             \     "class %SPdf\n\nend"
             \ },
             \}
-else
-   " vim-spec-runner
-   " use dispatch
-   let g:spec_runner_dispatcher = 'Dispatch {command}'
-   map <Leader>R <Plug>RunCurrentSpecFile
-   map <Leader>r <Plug>RunFocusedSpec
-   map <Leader>l <Plug>RunMostRecentSpec
 endif
 
 " https://github.com/majutsushi/tagbar/wiki#ruby
