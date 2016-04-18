@@ -376,8 +376,10 @@ else
 end
 
 """ NEOVIM SPECIFIC CONFIGURATION """
-" Transparently changing windows from a terminal buffer
 if has('nvim')
+  " ESC exits insert mode from a terminal buffer
+  tnoremap <ESC> <C-\><C-n>
+  " Transparently changing windows from a terminal buffer
   tnoremap <C-w>h <C-\><C-n><C-w>h
   tnoremap <C-w>j <C-\><C-n><C-w>j
   tnoremap <C-w>k <C-\><C-n><C-w>k
