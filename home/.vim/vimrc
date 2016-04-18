@@ -179,9 +179,12 @@ NeoBundle 'wfleming/vim-codeclimate'
 " Run your tests at the speed of thought
 NeoBundle 'janko-m/vim-test'
 
-" Wrapper of some neovim's :terminal functions
+" nvim plugins
 if has('nvim')
+  " Wrapper of some neovim's :terminal functions
   NeoBundle 'kassio/neoterm'
+  " Adds neovim support to vim-dispatch
+  NeoBundle 'radenling/vim-dispatch-neovim'
 end
 
 " vim-scripts repos
@@ -368,12 +371,7 @@ nmap <silent> <leader>R :TestFile<CR>
 nmap <silent> <leader>A :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
-" let g:test#preserve_screen = 1
-if has('nvim')
-  let test#strategy = "neoterm"
-else
-  let test#strategy = "dispatch"
-end
+let test#strategy = "dispatch"
 
 """ NEOVIM SPECIFIC CONFIGURATION """
 if has('nvim')
