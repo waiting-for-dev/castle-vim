@@ -149,7 +149,7 @@ NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-repeat'
 
 " Smart command dispatching
-NeoBundle 'tpope/vim-dispatch', { 'rev': 'repeat-last' }
+NeoBundle 'tpope/vim-dispatch'
 
 " Ruby ri in vim
 NeoBundle 'danchoi/ri.vim'
@@ -356,9 +356,6 @@ if filereadable($HOME.'/.vim/www_urls.vim')
   source $HOME/.vim/www_urls.vim
 endif
 let g:www_default_search_engine = 'g?'
-
-" dispatch
-nnoremap <leader>l :Dispatch -<CR>
 
 " codeclimate
 nmap <Leader>sp :CodeClimateAnalyzeProject<CR>
