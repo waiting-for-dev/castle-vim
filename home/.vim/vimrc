@@ -194,6 +194,9 @@ NeoBundle 'VimRepress'
 " Makes GVim-only colorschemes Just Work in terminal Vim
 NeoBundle 'CSApprox'
 
+" Near real-time update of a file
+NeoBundle 'TailMinusF'
+
 call neobundle#end()
 
 NeoBundleCheck
