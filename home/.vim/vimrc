@@ -161,8 +161,8 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'kien/ctrlp.vim'
 
 " Open urls, favorites and searchs from vim
-" NeoBundle 'waiting-for-dev/vim-www'
-NeoBundle '/home/marc/projects/vim/vim-www/', { 'type' : 'nosync' }
+NeoBundle 'waiting-for-dev/vim-www'
+" NeoBundle '/home/marc/projects/vim/vim-www/', { 'type' : 'nosync' }
 
 " Auto-generate tag file
 NeoBundle 'ludovicchabant/vim-gutentags'
