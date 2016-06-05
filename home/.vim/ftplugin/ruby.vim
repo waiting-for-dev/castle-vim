@@ -10,10 +10,6 @@ abbreviate bp binding.pry
 
 "vimrails
 if exists("b:rails_root")
-   "run current file rake
-   map <leader>K :Rake<CR>
-   "run current line rake
-   map <leader>k :.Rake<CR>
    let g:rails_projections = {
             \ "db/seeds/*.seeds.rb": {"command": "seed"},
             \ "spec/views/*_spec.rb": {
