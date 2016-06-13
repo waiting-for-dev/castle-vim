@@ -162,7 +162,7 @@ NeoBundle 'kien/ctrlp.vim'
 
 " Open urls, favorites and searchs from vim
 NeoBundle 'waiting-for-dev/vim-www'
-" NeoBundle '/home/marc/projects/vim/vim-www/', { 'type' : 'nosync' }
+" NeoBundle '~/projects/vim/vim-www/', { 'type': 'nosync' }
 
 " Auto-generate tag file
 NeoBundle 'ludovicchabant/vim-gutentags'
@@ -358,6 +358,7 @@ endfunc
 if filereadable($HOME.'/.vim/www_urls.vim')
   source $HOME/.vim/www_urls.vim
 endif
+let g:www_launch_browser_command = "sensible-browser {{URL}} 2> /dev/null"
 let g:www_launch_cli_browser_command = "elinks {{URL}}"
 let g:www_shortcut_engines = { 
       \ 'devdocs': ['Doc', '<leader>k'],
