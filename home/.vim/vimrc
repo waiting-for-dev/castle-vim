@@ -358,7 +358,6 @@ endfunc
 if filereadable($HOME.'/.vim/www_urls.vim')
   source $HOME/.vim/www_urls.vim
 endif
-let g:www_launch_browser_command = "sensible-browser {{URL}} 2> /dev/null"
 let g:www_launch_cli_browser_command = "elinks {{URL}}"
 let g:www_shortcut_engines = { 
       \ 'devdocs': ['Doc', '<leader>k'],
@@ -379,6 +378,7 @@ nmap <silent> <leader>A :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 let test#strategy = "dispatch"
+let g:test#ruby#rspec#executable = 'docker-compose exec web spring rspec'
 
 """ NEOVIM SPECIFIC CONFIGURATION """
 if has('nvim')
