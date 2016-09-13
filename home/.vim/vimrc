@@ -275,7 +275,7 @@ endif
 """ PLUGINS CONFIGURATION """
 
 " tagbar
-nmap <leader>g :TagbarToggle<CR>
+nmap <leader>t :TagbarToggle<CR>
 
 " syntastic
 let g:syntastic_mode_map = { 'mode': 'active',
