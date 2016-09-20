@@ -334,6 +334,8 @@ noremap <leader>n :NERDTreeToggle<CR>
 
 """ COLOR SCHEMES """
 " if $TERM == 'xterm'
+" https://github.com/neovim/neovim/wiki/Following-HEAD#20160511
+set termguicolors
 set t_Co=256
 colorscheme solarized
 
