@@ -39,169 +39,151 @@ set laststatus=2
 " Do not highlight search results
 set nohlsearch
 
-""" START NEOBUNDLE CONFIGURATION (https://github.com/Shougo/neobundle.vim) """
+""" START PLUG CONFIGURATION (https://github.com/junegunn/vim-plug) """
 
-if has('vim_starting')
-  set rtp+=~/.vim/bundle/neobundle.vim/ "add neobundle path to runtimepath
-end
-
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" neobundle intself
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" GitHub repos
+call plug#begin('~/.vim/plugged')
 
 " Better html5 support
-NeoBundle 'othree/html5.vim'
+Plug 'othree/html5.vim'
 
 " File navigation
-NeoBundle 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 " Surround text
-NeoBundle 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 " Utility functions used by other plugins
-NeoBundle 'tomtom/tlib_vim'
+Plug 'tomtom/tlib_vim'
 
 " Better CSS syntax
-NeoBundle 'hail2u/vim-css3-syntax'
+Plug 'hail2u/vim-css3-syntax'
 
 " Better JS support
-NeoBundle 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 
 " Better JSON support
-NeoBundle 'leshill/vim-json'
+Plug 'leshill/vim-json'
 
 " Utilities for rails
-NeoBundle 'tpope/vim-rails'
+Plug 'tpope/vim-rails'
 
 " Utilities for ruby and gems development
-NeoBundle 'tpope/vim-rake'
+Plug 'tpope/vim-rake'
 
 " Project configuration
-NeoBundle 'tpope/vim-projectionist'
+Plug 'tpope/vim-projectionist'
 
 " Utilities for bundle
-NeoBundle 'tpope/vim-bundler'
+Plug 'tpope/vim-bundler'
 
 " Navigate painlessly between vim/tmux windows
-NeoBundle 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Ruby configuration
-NeoBundle 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby'
 
 " Slim support
-NeoBundle 'slim-template/vim-slim'
+Plug 'slim-template/vim-slim'
 
 " Twig support
-NeoBundle 'evidens/vim-twig'
+Plug 'evidens/vim-twig'
 
 " Search text under visual selection
-NeoBundle 'bronson/vim-visual-star-search'
+Plug 'bronson/vim-visual-star-search'
 
 " Coffee Script support
-NeoBundle 'kchmck/vim-coffee-script'
+Plug 'kchmck/vim-coffee-script'
 
 " Easily align tables
-NeoBundle 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 
 " Color scheme
-NeoBundle 'altercation/vim-colors-solarized'
+Plug 'altercation/vim-colors-solarized'
 
 " XML utilities
-NeoBundle 'othree/xml.vim'
+Plug 'othree/xml.vim'
 
 " Auto-completion for quotes, parens, brackets, etc.
-NeoBundle 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
 
 " Personal wiki
-NeoBundle 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki'
 
 " Autocompletion
-NeoBundle 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " Syntax error detection
-NeoBundle 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 
 " Git client
-NeoBundle 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " Easily search for, substitute, and abbreviate multiple variants of a word 
-NeoBundle 'tpope/vim-abolish'
+Plug 'tpope/vim-abolish'
 
-" Snippets generation
-NeoBundle 'sirver/ultisnips'
-
-" Built snippets
-NeoBundle 'honza/vim-snippets'
+" Snippets generation & built-in snippets
+Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
 
 " Tag navigation in a side window
-NeoBundle 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 " Multiple cursors
-NeoBundle 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 
 " Maps for bidirectional commands
-NeoBundle 'tpope/vim-unimpaired'
+Plug 'tpope/vim-unimpaired'
 
 " Enable repeating supported plugin maps with "."
-NeoBundle 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'
 
 " Smart command dispatching
-NeoBundle 'tpope/vim-dispatch'
+Plug 'tpope/vim-dispatch'
 
 " Ruby ri in vim
-NeoBundle 'danchoi/ri.vim'
+Plug 'danchoi/ri.vim'
 
 " Git diff in the gutter
-NeoBundle 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 " File, buffer, mru, tag finder
-NeoBundle 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 
 " Open urls, favorites and searchs from vim
-NeoBundle 'waiting-for-dev/vim-www'
-" NeoBundle '~/projects/vim/vim-www/', { 'type': 'nosync' }
+Plug 'waiting-for-dev/vim-www'
 
 " Auto-generate tag file
-NeoBundle 'ludovicchabant/vim-gutentags'
+Plug 'ludovicchabant/vim-gutentags'
 
 " Elixir support
-NeoBundle 'elixir-lang/vim-elixir'
+Plug 'elixir-lang/vim-elixir'
 
 " Comment stuff
-NeoBundle 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 
 " Codeclimate integration
-NeoBundle 'wfleming/vim-codeclimate'
+Plug 'wfleming/vim-codeclimate'
 
 " Run your tests at the speed of thought
-NeoBundle 'janko-m/vim-test'
+Plug 'janko-m/vim-test'
 
 " nvim plugins
 if has('nvim')
   " Wrapper of some neovim's :terminal functions
-  NeoBundle 'kassio/neoterm'
+  Plug 'kassio/neoterm'
   " Adds neovim support to vim-dispatch
-  NeoBundle 'radenling/vim-dispatch-neovim'
+  Plug 'radenling/vim-dispatch-neovim'
 end
 
-" vim-scripts repos
 " Publish to wordpress
-NeoBundle 'VimRepress'
+Plug 'vim-scripts/VimRepress'
 
 " Makes GVim-only colorschemes Just Work in terminal Vim
-NeoBundle 'CSApprox'
+Plug 'vim-scripts/CSApprox'
 
 " Near real-time update of a file
-NeoBundle 'TailMinusF'
+Plug 'vim-scripts/TailMinusF'
 
-call neobundle#end()
-
-NeoBundleCheck
-
-filetype plugin indent on
+call plug#end()
 
 """ OTHER OPTIONS """
 
