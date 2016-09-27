@@ -166,14 +166,6 @@ Plug 'wfleming/vim-codeclimate'
 " Run your tests at the speed of thought
 Plug 'janko-m/vim-test'
 
-" nvim plugins
-if has('nvim')
-  " Wrapper of some neovim's :terminal functions
-  Plug 'kassio/neoterm'
-  " Adds neovim support to vim-dispatch
-  Plug 'radenling/vim-dispatch-neovim'
-end
-
 " Publish to wordpress
 Plug 'vim-scripts/VimRepress'
 
@@ -182,6 +174,14 @@ Plug 'vim-scripts/CSApprox'
 
 " Near real-time update of a file
 Plug 'vim-scripts/TailMinusF'
+
+" nvim plugins
+if has('nvim')
+  " Wrapper of some neovim's :terminal functions
+  Plug 'kassio/neoterm'
+  " Adds neovim support to vim-dispatch
+  Plug 'radenling/vim-dispatch-neovim'
+end
 
 call plug#end()
 
@@ -315,9 +315,10 @@ nmap <leader>gA :Git commit -a<CR>
 noremap <leader>n :NERDTreeToggle<CR>
 
 """ COLOR SCHEMES """
-" if $TERM == 'xterm'
-" https://github.com/neovim/neovim/wiki/Following-HEAD#20160511
-set termguicolors
+if has('nvim')
+  " https://github.com/neovim/neovim/wiki/Following-HEAD#20160511
+  set termguicolors
+end
 set t_Co=256
 colorscheme solarized
 
