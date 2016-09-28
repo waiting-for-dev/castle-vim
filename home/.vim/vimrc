@@ -3,6 +3,9 @@
 " Enable syntax highlighting
 syntax on
 
+" Enable spell check
+set spell
+
 " Number of spaces for (auto)indent
 set shiftwidth=2
 
