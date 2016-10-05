@@ -46,9 +46,6 @@ set nohlsearch
 
 call plug#begin('~/.vim/plugged')
 
-" Better html5 support
-Plug 'othree/html5.vim'
-
 " File navigation
 Plug 'scrooloose/nerdtree'
 
@@ -57,15 +54,6 @@ Plug 'tpope/vim-surround'
 
 " Utility functions used by other plugins
 Plug 'tomtom/tlib_vim'
-
-" Better CSS syntax
-Plug 'hail2u/vim-css3-syntax'
-
-" Better JS support
-Plug 'pangloss/vim-javascript'
-
-" Better JSON support
-Plug 'leshill/vim-json'
 
 " Utilities for rails
 Plug 'tpope/vim-rails'
@@ -103,9 +91,6 @@ Plug 'godlygeek/tabular'
 " Color scheme
 Plug 'altercation/vim-colors-solarized'
 
-" XML utilities
-Plug 'othree/xml.vim'
-
 " Auto-completion for quotes, parens, brackets, etc.
 Plug 'Raimondi/delimitMate'
 
@@ -142,9 +127,6 @@ Plug 'tpope/vim-repeat'
 " Smart command dispatching
 Plug 'tpope/vim-dispatch'
 
-" Ruby ri in vim
-Plug 'danchoi/ri.vim'
-
 " Git diff in the gutter
 Plug 'airblade/vim-gitgutter'
 
@@ -174,9 +156,6 @@ Plug 'vim-scripts/VimRepress'
 
 " Makes GVim-only colorschemes Just Work in terminal Vim
 Plug 'vim-scripts/CSApprox'
-
-" Near real-time update of a file
-Plug 'vim-scripts/TailMinusF'
 
 " nvim plugins
 if has('nvim')
@@ -324,11 +303,6 @@ if has('nvim')
 end
 set t_Co=256
 colorscheme solarized
-
-" ri
-nnoremap  ,dr :call ri#OpenSearchPrompt(0)<cr> " horizontal split
-nnoremap  ,dR :call ri#OpenSearchPrompt(1)<cr> " vertical split
-nnoremap  ,dk :call ri#LookupNameUnderCursor()<cr> " keyword lookup
 
 " CtrlP
 " Remeber last mode (https://github.com/kien/ctrlp.vim/issues/330)
