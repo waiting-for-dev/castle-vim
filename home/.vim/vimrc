@@ -42,6 +42,9 @@ set laststatus=2
 " Do not highlight search results
 set nohlsearch
 
+" Autoselect feature
+set completeopt+=noinsert
+
 """ START PLUG CONFIGURATION (https://github.com/junegunn/vim-plug) """
 
 call plug#begin('~/.vim/plugged')
@@ -96,9 +99,6 @@ Plug 'Raimondi/delimitMate'
 
 " Personal wiki
 Plug 'vimwiki/vimwiki'
-
-" Autocompletion
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " Syntax error detection
 Plug 'scrooloose/syntastic'
@@ -163,7 +163,13 @@ if has('nvim')
   Plug 'kassio/neoterm'
   " Adds neovim support to vim-dispatch
   Plug 'radenling/vim-dispatch-neovim'
+  " Autocompletion
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  " Autocompletion
+  Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 end
+  " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 call plug#end()
 
@@ -353,4 +359,7 @@ if has('nvim')
   tnoremap <C-w>l <C-\><C-n><C-w>l
   " Start insert mode when entering a terminal
   autocmd BufEnter term://* startinsert
+
+  " Enable autocompletion at startup
+  let g:deoplete#enable_at_startup = 1
 end
