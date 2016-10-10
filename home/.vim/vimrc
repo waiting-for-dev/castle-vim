@@ -49,14 +49,14 @@ set completeopt+=noinsert
 
 call plug#begin('~/.vim/plugged')
 
-" File navigation
-Plug 'scrooloose/nerdtree'
-
 " Surround text
 Plug 'tpope/vim-surround'
 
 " Utility functions used by other plugins
 Plug 'tomtom/tlib_vim'
+
+" File manager
+Plug 'rbgrouleff/bclose.vim' | Plug 'francoiscabrol/ranger.vim'
 
 " Utilities for rails
 Plug 'tpope/vim-rails'
@@ -298,9 +298,6 @@ nmap <leader>gd :Gdiff<CR>
 nmap <leader>g. :Git add .<CR>
 nmap <leader>gm :Git commit --amend<CR>
 nmap <leader>gA :Git commit -a<CR>
-
-" NERDTree
-noremap <leader>n :NERDTreeToggle<CR>
 
 """ COLOR SCHEMES """
 if has('nvim')
