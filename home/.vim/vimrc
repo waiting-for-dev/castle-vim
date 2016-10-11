@@ -136,9 +136,6 @@ Plug 'kien/ctrlp.vim'
 " Open urls, favorites and searchs from vim
 Plug 'waiting-for-dev/vim-www'
 
-" Auto-generate tag file
-Plug 'ludovicchabant/vim-gutentags'
-
 " Elixir support
 Plug 'elixir-lang/vim-elixir'
 
@@ -156,6 +153,9 @@ Plug 'vim-scripts/VimRepress'
 
 " Makes GVim-only colorschemes Just Work in terminal Vim
 Plug 'vim-scripts/CSApprox'
+
+"Automatic tags generation
+Plug 'craigemery/vim-autotag'
 
 " nvim plugins
 if has('nvim')
