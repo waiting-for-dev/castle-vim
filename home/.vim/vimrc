@@ -1,4 +1,4 @@
-"r"" SETTINGS """
+""" SETTINGS """
 
 " Enable syntax highlighting
 syntax on
@@ -42,8 +42,82 @@ set laststatus=2
 " Do not highlight search results
 set nohlsearch
 
-" Autoselect feature
-set completeopt+=noinsert
+" Number of colors
+set t_Co=256
+
+""" OTHER CONFIGURATION """
+
+" for writing Calibre recipes (http://manual.calibre-ebook.com/news.html)
+" which are python classes
+autocmd BufNewFile,BufRead *.recipe set ft=python
+
+" rabl templates are ruby files
+autocmd BufNewFile,BufRead *.rabl set ft=ruby
+
+" load some personal configuration I don't want in a public repository
+if filereadable($HOME.'/.vim/vimrc_private')
+  source $HOME/.vim/vimrc_private
+endif
+
+" git
+autocmd Filetype gitcommit setlocal spell textwidth=72 "commit messages with spell checking and textwidth
+
+" command to open easily this file
+command! Evimrc e ~/.vim/vimrc
+command! Svimrc sp ~/.vim/vimrc
+command! Vvimrc vs ~/.vim/vimrc
+
+" command to reload local vim configuration
+command! Vimrc source $MYVIMRC
+
+" command to open easily my main zsh config file
+command! Eoh e ~/.oh-my-zsh/custom/custom.zsh
+command! Soh sp ~/.oh-my-zsh/custom/custom.zsh
+command! Voh vp ~/.oh-my-zsh/custom/custom.zsh
+
+" mapping to close quickfix windows
+nnoremap <F8> :cclose<CR>
+
+" toggle search matches highlighting
+:noremap <F12> :set hlsearch!<CR>
+
+" indent all file & return to current line
+nnoremap <F6> gg=G''
+
+" force page refresing
+nnoremap <F5> :redraw!<CR>
+
+" tab navigation
+nnoremap <leader>tp :tabprevious<CR>
+nnoremap <leader>tn :tabNext<CR>
+nnoremap <leader>tP :tabfirst<CR>
+nnoremap <leader>tN :tablast<CR>
+
+" Easily find todo's
+nnoremap <leader><leader>t :Ggrep TODO:<CR>
+
+" Jump to last position when reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+""" NEOVIM SPECIFIC CONFIGURATION """
+if has('nvim')
+  " ESC exits insert mode from a terminal buffer
+  tnoremap <ESC> <C-\><C-n>
+
+  " Transparently changing windows from a terminal buffer
+  tnoremap <C-w>h <C-\><C-n><C-w>h
+  tnoremap <C-w>j <C-\><C-n><C-w>j
+  tnoremap <C-w>k <C-\><C-n><C-w>k
+  tnoremap <C-w>l <C-\><C-n><C-w>l
+
+  " Start insert mode when entering a terminal
+  autocmd BufEnter term://* startinsert
+
+  " https://github.com/neovim/neovim/wiki/Following-HEAD#20160511
+  set termguicolors
+end
 
 """ START PLUG CONFIGURATION (https://github.com/junegunn/vim-plug) """
 
@@ -100,11 +174,36 @@ Plug 'Raimondi/delimitMate'
 " Personal wiki
 Plug 'vimwiki/vimwiki'
 
+let g:vimwiki_list = [{'path': '~/wiki/', 'path_html': '~/wiki_html/', 'syntax': 'markdown', 'ext': '.md'}]
+
 " Syntax error detection
 Plug 'scrooloose/syntastic'
 
+let g:syntastic_mode_map = { 'mode': 'active',
+      \ 'active_filetypes': ['php', 'ruby', 'css', 'html'], }
+let g:syntastic_php_checkers = ['php']
+let g:syntastic_ruby_checkers = ['ruby', 'rubocop', 'reek']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_check_on_open = 1
+
 " Git client
 Plug 'tpope/vim-fugitive'
+
+nmap <leader>gg :Git 
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>gc :Gcommit<CR>
+nmap <leader>gr :Gread<CR>
+nmap <leader>gw :Gwrite<CR>
+nmap <leader>gW :Gwrite<CR>:Gcommit<CR>
+nmap <leader>gM :Gwrite<CR>:Git commit --amend<CR>
+nmap <leader>gd :Gdiff<CR>
+nmap <leader>g. :Git add .<CR>
+nmap <leader>gm :Git commit --amend<CR>
+nmap <leader>gA :Git commit -a<CR>
+
+"add git branch to the status line with fugitive
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Easily search for, substitute, and abbreviate multiple variants of a word 
 Plug 'tpope/vim-abolish'
@@ -112,8 +211,15 @@ Plug 'tpope/vim-abolish'
 " Snippets generation & built-in snippets
 Plug 'sirver/ultisnips' | Plug 'honza/vim-snippets'
 
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsListSnippets="<c-e>"
+
 " Tag navigation in a side window
 Plug 'majutsushi/tagbar'
+
+nmap <leader>t :TagbarToggle<CR>
 
 " Multiple cursors
 Plug 'terryma/vim-multiple-cursors'
@@ -133,8 +239,30 @@ Plug 'airblade/vim-gitgutter'
 " File, buffer, mru, tag finder
 Plug 'kien/ctrlp.vim'
 
+" Remeber last mode (https://github.com/kien/ctrlp.vim/issues/330)
+let g:ctrlp_cmd = 'call CallCtrlP()'
+func! CallCtrlP()
+  if exists('s:called_ctrlp')
+    CtrlPLastMode
+  else
+    let s:called_ctrlp = 1
+    CtrlP
+  endif
+endfunc
+
 " Open urls, favorites and searchs from vim
 Plug 'waiting-for-dev/vim-www'
+
+if filereadable($HOME.'/.vim/www_urls.vim')
+  source $HOME/.vim/www_urls.vim
+endif
+let g:www_launch_cli_browser_command = "elinks {{URL}}"
+let g:www_shortcut_engines = { 
+      \ 'devdocs': ['Dev', '<leader>k'],
+      \ 'google': ['Google'],
+      \ 'duckduckgo': ['Duckduckgo'],
+      \ 'github': ['Github'],
+      \ }
 
 " Elixir support
 Plug 'elixir-lang/vim-elixir'
@@ -147,6 +275,14 @@ Plug 'wfleming/vim-codeclimate'
 
 " Run your tests at the speed of thought
 Plug 'janko-m/vim-test'
+
+nmap <silent> <leader>r :TestNearest<CR>
+nmap <silent> <leader>R :TestFile<CR>
+nmap <silent> <leader>A :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+let test#strategy = "dispatch"
+let g:test#ruby#rspec#executable = 'docker-compose exec app bundle exec rspec'
 
 " Publish to wordpress
 Plug 'vim-scripts/VimRepress'
@@ -161,202 +297,22 @@ Plug 'craigemery/vim-autotag'
 if has('nvim')
   " Wrapper of some neovim's :terminal functions
   Plug 'kassio/neoterm'
+
   " Adds neovim support to vim-dispatch
   Plug 'radenling/vim-dispatch-neovim'
+
   " Autocompletion
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+  let g:deoplete#enable_at_startup = 1
+  " Autoselect feature
+  set completeopt+=noinsert
 else
   " Autocompletion
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 end
-  " Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 call plug#end()
 
-""" OTHER OPTIONS """
-
-" when writting e-mails with gmail with <<It's All Text>> Firefox plugin
-" (https://addons.mozilla.org/En-us/firefox/addon/its-all-text/)
-" set textwidth to 80 characters
-autocmd BufNewFile,BufRead mail.google.com* set tw=80
-
-" for writing Calibre recipes (http://manual.calibre-ebook.com/news.html)
-" which are python classes
-autocmd BufNewFile,BufRead *.recipe set ft=python
-
-" rabl templates are ruby files
-autocmd BufNewFile,BufRead *.rabl set ft=ruby
-
-" load some personal configuration I don't want in a public repository
-if filereadable($HOME.'/.vim/vimrc_private')
-  source $HOME/.vim/vimrc_private
-endif
-
-" encryption
-" https://github.com/neovim/neovim/issues/701
-if !has('nvim')
-  set cm=blowfish "use blowfish for encryption
-  autocmd BufNewFile,BufRead *.enc set nobackup noswapfile nowritebackup viminfo= "enc extension will be used for encrypted files
-end
-
-" git
-autocmd Filetype gitcommit setlocal spell textwidth=72 "commit messages with spell checking and textwidth
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P "add git branch to the status line with fugitive
-
-" command to open easily this file
-command! Evimrc e ~/.vim/vimrc
-command! Svimrc sp ~/.vim/vimrc
-command! Vvimrc vs ~/.vim/vimrc
-
-" command to reload local vim configuration
-command! Vimrc source $MYVIMRC
-
-" command to open easily my main zsh config file
-command! Eoh e ~/.oh-my-zsh/custom/custom.zsh
-command! Soh sp ~/.oh-my-zsh/custom/custom.zsh
-command! Voh vp ~/.oh-my-zsh/custom/custom.zsh
-
-" mapping to close quickfix windows
-nnoremap <F8> :cclose<CR>
-
-" toggle search matches highlighting
-:noremap <F12> :set hlsearch!<CR>
-
-" indent all file & return to current line
-nnoremap <F6> gg=G''
-
-" force page refresing
-nnoremap <F5> :redraw!<CR>
-
-" tab navigation
-nnoremap <leader>tp :tabprevious<CR>
-nnoremap <leader>tn :tabNext<CR>
-nnoremap <leader>tP :tabfirst<CR>
-nnoremap <leader>tN :tablast<CR>
-
-" Easily find todo's
-nnoremap <leader><leader>t :Ggrep TODO:<CR>
-
-" Jump to last position when reopening a file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
-
-""" PLUGINS CONFIGURATION """
-
-"Tagbar
-nmap <leader>t :TagbarToggle<CR>
-
-" syntastic
-let g:syntastic_mode_map = { 'mode': 'active',
-      \ 'active_filetypes': ['php', 'ruby', 'css', 'html'], }
-let g:syntastic_php_checkers = ['php']
-let g:syntastic_ruby_checkers = ['ruby', 'rubocop', 'reek']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_check_on_open = 1
-
-" vimwiki
-let g:vimwiki_list = [{'path': '~/wiki/', 'path_html': '~/wiki_html/', 'syntax': 'markdown', 'ext': '.md'}]
-
-" ultisnips & youcompleteme
-" http://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme/18685821#18685821
-" https://github.com/Valloric/YouCompleteMe/issues/36
-" function! g:UltiSnips_Complete()
-"   call UltiSnips#ExpandSnippet()
-"   if g:ulti_expand_res == 0
-"     if pumvisible()
-"       return "\<C-n>"
-"     else
-"       call UltiSnips#JumpForwards()
-"       if g:ulti_jump_forwards_res == 0
-"         return "\<TAB>"
-"       endif
-"     endif
-"   endif
-"   return ""
-" endfunction
-" au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsListSnippets="<c-e>"
-" this mapping Enter key to <C-y> to chose the current highlight item 
-" and close the selection list, same as other IDEs.
-" CONFLICT with some plugins like tpope/Endwise
-" inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" fugitive
-nmap <leader>gg :Git 
-nmap <leader>gs :Gstatus<CR>
-nmap <leader>gc :Gcommit<CR>
-nmap <leader>gr :Gread<CR>
-nmap <leader>gw :Gwrite<CR>
-nmap <leader>gW :Gwrite<CR>:Gcommit<CR>
-nmap <leader>gM :Gwrite<CR>:Git commit --amend<CR>
-nmap <leader>gd :Gdiff<CR>
-nmap <leader>g. :Git add .<CR>
-nmap <leader>gm :Git commit --amend<CR>
-nmap <leader>gA :Git commit -a<CR>
-
-""" COLOR SCHEMES """
-if has('nvim')
-  " https://github.com/neovim/neovim/wiki/Following-HEAD#20160511
-  set termguicolors
-end
-set t_Co=256
+" This needs to be called outside Plug block
 colorscheme solarized
-
-" CtrlP
-" Remeber last mode (https://github.com/kien/ctrlp.vim/issues/330)
-let g:ctrlp_cmd = 'call CallCtrlP()'
-func! CallCtrlP()
-  if exists('s:called_ctrlp')
-    CtrlPLastMode
-  else
-    let s:called_ctrlp = 1
-    CtrlP
-  endif
-endfunc
-
-" www.vim
-if filereadable($HOME.'/.vim/www_urls.vim')
-  source $HOME/.vim/www_urls.vim
-endif
-let g:www_launch_cli_browser_command = "elinks {{URL}}"
-let g:www_shortcut_engines = { 
-      \ 'devdocs': ['Dev', '<leader>k'],
-      \ 'google': ['Google'],
-      \ 'duckduckgo': ['Duckduckgo'],
-      \ 'github': ['Github'],
-      \ }
-
-" codeclimate
-nmap <Leader>sp :CodeClimateAnalyzeProject<CR>
-nmap <Leader>so :CodeClimateAnalyzeOpenFiles<CR>
-nmap <Leader>sf :CodeClimateAnalyzeCurrentFile<CR>
-
-" vim-test
-nmap <silent> <leader>r :TestNearest<CR>
-nmap <silent> <leader>R :TestFile<CR>
-nmap <silent> <leader>A :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
-let test#strategy = "dispatch"
-let g:test#ruby#rspec#executable = 'docker-compose exec app bundle exec rspec'
-
-""" NEOVIM SPECIFIC CONFIGURATION """
-if has('nvim')
-  " ESC exits insert mode from a terminal buffer
-  tnoremap <ESC> <C-\><C-n>
-  " Transparently changing windows from a terminal buffer
-  tnoremap <C-w>h <C-\><C-n><C-w>h
-  tnoremap <C-w>j <C-\><C-n><C-w>j
-  tnoremap <C-w>k <C-\><C-n><C-w>k
-  tnoremap <C-w>l <C-\><C-n><C-w>l
-  " Start insert mode when entering a terminal
-  autocmd BufEnter term://* startinsert
-
-  " Enable autocompletion at startup
-  let g:deoplete#enable_at_startup = 1
-end
