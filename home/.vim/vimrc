@@ -130,8 +130,9 @@ Plug 'tpope/vim-surround'
 Plug 'tomtom/tlib_vim'
 
 " File manager
-Plug 'Shougo/unite.vim' | Plug 'Shougo/vimfiler'
+Plug 'scrooloose/nerdtree'
 
+nmap <leader>f :NERDTreeToggle<CR> 
 " Utilities for rails
 Plug 'tpope/vim-rails'
 
@@ -315,4 +316,5 @@ end
 call plug#end()
 
 " This needs to be called outside Plug block
+
 colorscheme solarized
