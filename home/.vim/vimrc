@@ -294,6 +294,9 @@ Plug 'vim-scripts/CSApprox'
 "Automatic tags generation
 Plug 'craigemery/vim-autotag'
 
+"Autocompletion
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+
 " nvim plugins
 if has('nvim')
   " Wrapper of some neovim's :terminal functions
@@ -304,13 +307,6 @@ if has('nvim')
 
   " Autocompletion
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-  let g:deoplete#enable_at_startup = 1
-  " Autoselect feature
-  set completeopt+=noinsert
-else
-  " Autocompletion
-  Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 end
 
 call plug#end()
