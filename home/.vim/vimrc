@@ -45,6 +45,9 @@ set nohlsearch
 " Number of colors
 set t_Co=256
 
+" Ideal textwidth is 80
+set textwidth=80
+
 """ OTHER CONFIGURATION """
 
 " for writing Calibre recipes (http://manual.calibre-ebook.com/news.html)
