@@ -325,9 +325,6 @@ if has('nvim')
   " Wrapper of some neovim's :terminal functions
   Plug 'kassio/neoterm'
 
-  " Adds neovim support to vim-dispatch
-  Plug 'radenling/vim-dispatch-neovim'
-
   " Autocompletion
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 end
