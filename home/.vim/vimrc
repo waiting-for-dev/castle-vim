@@ -45,9 +45,6 @@ set nohlsearch
 " Number of colors
 set t_Co=256
 
-" Ideal textwidth is 80
-set textwidth=80
-
 " Emacs bindings to move in command line (see :help emacs-keys)
 " start of line
 :cnoremap <C-A>		<Home>
@@ -275,12 +272,14 @@ func! CallCtrlP()
 endfunc
 
 " Open urls, favorites and searchs from vim
-Plug 'waiting-for-dev/vim-www'
+" Plug 'waiting-for-dev/vim-www'
+Plug '~/projects/vim/vim-www/'
 
 if filereadable($HOME.'/.vim/www_urls.vim')
   source $HOME/.vim/www_urls.vim
 endif
-let g:www_launch_cli_browser_command = "elinks {{URL}}"
+" let g:www_launch_browser_command = "google-chrome {{URL}} &"
+let g:www_launch_cli_browser_command = "elinks"
 let g:www_shortcut_engines = { 
       \ 'devdocs': ['Dev', '<leader>k'],
       \ 'google': ['Google'],
