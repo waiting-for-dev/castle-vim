@@ -137,6 +137,10 @@ if has('nvim')
 
   " https://github.com/neovim/neovim/wiki/Following-HEAD#20160511
   set termguicolors
+
+  " Make C-h work on nvim/tmux for vim-tmux-navigator plugin
+  " https://github.com/christoomey/vim-tmux-navigator#it-doesnt-work-in-neovim-specifically-c-h
+  nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 end
 
 """ START PLUG CONFIGURATION (https://github.com/junegunn/vim-plug) """
