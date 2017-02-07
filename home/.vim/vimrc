@@ -327,9 +327,6 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 if has('nvim')
   " Wrapper of some neovim's :terminal functions
   Plug 'kassio/neoterm'
-
-  " Autocompletion
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 end
 
 call plug#end()
