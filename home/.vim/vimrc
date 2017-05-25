@@ -327,6 +327,9 @@ Plug 'craigemery/vim-autotag'
 "Autocompletion
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
+"Better javascript support
+Plug 'pangloss/vim-javascript'
+
 " nvim plugins
 if has('nvim')
   " Wrapper of some neovim's :terminal functions
