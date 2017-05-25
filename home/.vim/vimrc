@@ -294,6 +294,10 @@ let g:www_shortcut_engines = {
 " Elixir support
 Plug 'elixir-lang/vim-elixir'
 
+" Elm support
+Plug 'lambdatoast/elm.vim'
+Plug 'elmcast/elm-vim'
+
 " Comment stuff
 Plug 'tpope/vim-commentary'
 
