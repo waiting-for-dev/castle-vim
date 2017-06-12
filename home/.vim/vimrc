@@ -201,16 +201,13 @@ Plug 'vimwiki/vimwiki'
 
 let g:vimwiki_list = [{'path': '~/wiki/', 'path_html': '~/wiki_html/', 'syntax': 'markdown', 'ext': '.md'}]
 
-" Syntax error detection
-Plug 'scrooloose/syntastic'
+" Linting and make framework
+Plug 'neomake/neomake'
 
-let g:syntastic_mode_map = { 'mode': 'active',
-      \ 'active_filetypes': ['php', 'ruby', 'css', 'html'], }
-let g:syntastic_php_checkers = ['php']
-let g:syntastic_ruby_checkers = ['ruby', 'rubocop', 'reek']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_check_on_open = 1
+autocmd! BufWritePost,BufEnter * Neomake
+
+let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'reek']
+let g:neomake_elixir_enabled_makers = ['credo']
 
 " Git client
 Plug 'tpope/vim-fugitive'
