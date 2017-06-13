@@ -201,13 +201,10 @@ Plug 'vimwiki/vimwiki'
 
 let g:vimwiki_list = [{'path': '~/wiki/', 'path_html': '~/wiki_html/', 'syntax': 'markdown', 'ext': '.md'}]
 
-" Linting and make framework
-Plug 'neomake/neomake'
+" Linting
+Plug 'w0rp/ale'
 
-autocmd! BufWritePost,BufEnter * Neomake
-
-let g:neomake_ruby_enabled_makers = ['mri', 'rubocop', 'reek']
-let g:neomake_elixir_enabled_makers = ['credo']
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 " Git client
 Plug 'tpope/vim-fugitive'
