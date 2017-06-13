@@ -288,6 +288,12 @@ let g:www_shortcut_engines = {
 " Elixir support
 Plug 'elixir-lang/vim-elixir'
 
+Plug 'powerman/vim-plugin-AnsiEsc'
+Plug 'slashmili/alchemist.vim'
+
+" Phoenix support
+Plug 'avdgaag/vim-phoenix'
+
 " Elm support
 Plug 'lambdatoast/elm.vim'
 Plug 'elmcast/elm-vim'
