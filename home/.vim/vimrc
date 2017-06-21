@@ -205,6 +205,7 @@ let g:vimwiki_list = [{'path': '~/wiki/', 'path_html': '~/wiki_html/', 'syntax':
 Plug 'w0rp/ale'
 
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_lint_on_text_changed = "never"
 
 " Git client
 Plug 'tpope/vim-fugitive'
