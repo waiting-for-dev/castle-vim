@@ -290,6 +290,7 @@ Plug 'elixir-lang/vim-elixir'
 
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'slashmili/alchemist.vim'
+Plug 'slime-lang/vim-slime-syntax'
 
 " Phoenix support
 Plug 'avdgaag/vim-phoenix'
