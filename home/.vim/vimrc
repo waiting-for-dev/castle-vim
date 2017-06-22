@@ -316,6 +316,7 @@ nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 let test#strategy = "dispatch"
 let g:test#ruby#rspec#executable = 'docker-compose exec app bundle exec rspec'
+let g:test#elixir#exunit#executable = 'docker-compose exec app mix test'
 
 " Publish to wordpress
 Plug 'vim-scripts/VimRepress'
