@@ -333,6 +333,13 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 "Better javascript support
 Plug 'pangloss/vim-javascript'
 
+" Scratch buffer
+Plug 'mtth/scratch.vim'
+
+let g:scratch_persistence_file = '.scratch.vim'
+let g:scratch_autohide = 1
+let g:scratch_insert_autohide = 0
+
 " nvim plugins
 if has('nvim')
   " Wrapper of some neovim's :terminal functions
