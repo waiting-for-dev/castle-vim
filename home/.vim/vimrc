@@ -280,7 +280,7 @@ endif
 let g:www_launch_browser_command = "x-www-browser {{URL}} &"
 let g:www_launch_cli_browser_command = "elinks"
 let g:www_shortcut_engines = { 
-      \ 'devdocs': ['Dev', '<leader>k'],
+      \ 'devdocs': ['Doc', '<leader>k'],
       \ 'google': ['Google'],
       \ 'duckduckgo': ['Duckduckgo'],
       \ 'github': ['Github'],
@@ -292,6 +292,8 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'slashmili/alchemist.vim'
 Plug 'slime-lang/vim-slime-syntax'
+
+let g:alchemist_compile_basepath = "/app/"
 
 " Phoenix support
 Plug 'avdgaag/vim-phoenix'
