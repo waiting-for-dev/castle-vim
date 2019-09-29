@@ -331,6 +331,11 @@ let g:scratch_persistence_file = '.scratch.vim'
 let g:scratch_autohide = 1
 let g:scratch_insert_autohide = 0
 
+" Haskell support
+Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
+Plug 'neovimhaskell/haskell-vim'
+Plug 'alx741/vim-hindent'
+
 " nvim plugins
 if has('nvim')
   " Wrapper of some neovim's :terminal functions
