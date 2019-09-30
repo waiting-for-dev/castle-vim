@@ -55,6 +55,9 @@ set cmdheight=2
 " Higher swap update time.
 set updatetime=300
 
+" Don't give ins-completion-menu messages
+set shortmess+=c
+
 " Emacs bindings to move in command line (see :help emacs-keys)
 " start of line
 :cnoremap <C-A>		<Home>
