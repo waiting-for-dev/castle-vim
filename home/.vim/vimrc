@@ -49,6 +49,9 @@ set t_Co=256
 " modifications and preserve marks and undo history.
 set hidden
 
+" Two rows height for command window.
+set cmdheight=2
+
 " Emacs bindings to move in command line (see :help emacs-keys)
 " start of line
 :cnoremap <C-A>		<Home>
