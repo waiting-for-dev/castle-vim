@@ -52,6 +52,9 @@ set hidden
 " Two rows height for command window.
 set cmdheight=2
 
+" Higher swap update time.
+set updatetime=300
+
 " Emacs bindings to move in command line (see :help emacs-keys)
 " start of line
 :cnoremap <C-A>		<Home>
