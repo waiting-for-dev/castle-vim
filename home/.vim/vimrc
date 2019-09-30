@@ -45,6 +45,10 @@ set nohlsearch
 " Number of colors
 set t_Co=256
 
+" Hide instead of closing buffers. It allows hiding buffer with unsaved
+" modifications and preserve marks and undo history.
+set hidden
+
 " Emacs bindings to move in command line (see :help emacs-keys)
 " start of line
 :cnoremap <C-A>		<Home>
