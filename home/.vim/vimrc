@@ -267,6 +267,10 @@ Plug 'airblade/vim-gitgutter'
 " File, buffer, mru, tag finder
 Plug 'kien/ctrlp.vim'
 
+if executable('rg')
+  let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob ""'
+endif
+
 " Remeber last mode (https://github.com/kien/ctrlp.vim/issues/330)
 let g:ctrlp_cmd = 'call CallCtrlP()'
 func! CallCtrlP()
