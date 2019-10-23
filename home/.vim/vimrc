@@ -173,17 +173,6 @@ Plug 'tomtom/tlib_vim'
 Plug 'scrooloose/nerdtree'
 
 nmap <leader>f :NERDTreeToggle<CR> 
-" Utilities for rails
-Plug 'tpope/vim-rails'
-
-" Utilities for ruby and gems development
-Plug 'tpope/vim-rake'
-
-" Project configuration
-Plug 'tpope/vim-projectionist'
-
-" Utilities for bundle
-Plug 'tpope/vim-bundler'
 
 " Navigate painlessly between vim/tmux windows
 Plug 'christoomey/vim-tmux-navigator'
