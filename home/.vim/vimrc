@@ -325,6 +325,9 @@ let g:scratch_persistence_file = '.scratch.vim'
 let g:scratch_autohide = 1
 let g:scratch_insert_autohide = 0
 
+" Better haskell support
+Plug 'neovimhaskell/haskell-vim'
+
 " Intellisense and Language Server Protocol
 Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 
@@ -440,8 +443,6 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
-Plug 'neovimhaskell/haskell-vim'
 
 " nvim plugins
 if has('nvim')
