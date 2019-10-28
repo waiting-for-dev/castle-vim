@@ -325,7 +325,7 @@ let g:scratch_persistence_file = '.scratch.vim'
 let g:scratch_autohide = 1
 let g:scratch_insert_autohide = 0
 
-" Haskell support
+" Intellisense and Language Server Protocol
 Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 
 " Use tab for trigger completion with characters ahead and navigate.
