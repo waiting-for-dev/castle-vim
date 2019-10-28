@@ -312,9 +312,6 @@ let test#strategy = "neovim"
 let g:test#ruby#rspec#executable = 'docker-compose exec app bundle exec rspec'
 let g:test#elixir#exunit#executable = 'docker-compose exec app mix test'
 
-" Publish to wordpress
-Plug 'vim-scripts/VimRepress'
-
 " Makes GVim-only colorschemes Just Work in terminal Vim
 Plug 'vim-scripts/CSApprox'
 
