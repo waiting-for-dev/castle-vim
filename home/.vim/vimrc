@@ -272,8 +272,7 @@ func! CallCtrlP()
 endfunc
 
 " Open urls, favorites and searchs from vim
-" Plug 'waiting-for-dev/vim-www'
-Plug '~/projects/vim/vim-www/'
+Plug 'waiting-for-dev/vim-www'
 
 if filereadable($HOME.'/.vim/www_urls.vim')
   source $HOME/.vim/www_urls.vim
