@@ -284,7 +284,6 @@ let g:www_shortcut_engines = {
 
 " Elixir support
 Plug 'elixir-lang/vim-elixir'
-
 Plug 'powerman/vim-plugin-AnsiEsc'
 Plug 'slashmili/alchemist.vim'
 Plug 'slime-lang/vim-slime-syntax'
