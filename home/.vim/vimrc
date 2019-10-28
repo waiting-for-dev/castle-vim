@@ -315,9 +315,6 @@ let g:test#elixir#exunit#executable = 'docker-compose exec app mix test'
 " Makes GVim-only colorschemes Just Work in terminal Vim
 Plug 'vim-scripts/CSApprox'
 
-"Automatic tags generation
-Plug 'craigemery/vim-autotag'
-
 "Better javascript support
 Plug 'pangloss/vim-javascript'
 
