@@ -328,6 +328,9 @@ let g:scratch_insert_autohide = 0
 " Intellisense and Language Server Protocol
 Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 
+" Extensions
+let g:coc_global_extensions = ['coc-solargraph']
+
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
