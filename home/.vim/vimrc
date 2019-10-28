@@ -176,7 +176,7 @@ Plug 'tomtom/tlib_vim'
 " File manager
 Plug 'scrooloose/nerdtree'
 
-nmap <leader>f :NERDTreeToggle<CR> 
+nmap <leader>t :NERDTreeToggle<CR> 
 
 " Navigate painlessly between vim/tmux windows
 Plug 'christoomey/vim-tmux-navigator'
@@ -236,11 +236,6 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Easily search for, substitute, and abbreviate multiple variants of a word 
 Plug 'tpope/vim-abolish'
-
-" Tag navigation in a side window
-Plug 'majutsushi/tagbar'
-
-nmap <leader>t :TagbarToggle<CR>
 
 " Multiple cursors
 Plug 'terryma/vim-multiple-cursors'
