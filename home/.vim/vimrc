@@ -255,6 +255,7 @@ Plug 'airblade/vim-gitgutter'
 " File, buffer, mru, tag finder
 Plug 'ctrlpvim/ctrlp.vim'
 
+" Use ripper-tags if present to index: much faster than grep
 if executable('rg')
   let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob ""'
 endif
