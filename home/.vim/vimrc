@@ -9,6 +9,9 @@ set spell
 " Number of spaces for (auto)indent
 set shiftwidth=2
 
+" Use sh as shell
+set shell=/bin/sh
+
 " Use spaces instead of tabs
 set expandtab
 
