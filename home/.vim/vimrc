@@ -290,9 +290,6 @@ Plug 'slime-lang/vim-slime-syntax'
 
 let g:alchemist_compile_basepath = "/app/"
 
-" Phoenix support
-Plug 'avdgaag/vim-phoenix'
-
 " Elm support
 Plug 'lambdatoast/elm.vim'
 Plug 'elmcast/elm-vim'
