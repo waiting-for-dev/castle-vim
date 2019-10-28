@@ -99,7 +99,8 @@ if filereadable($HOME.'/.vim/vimrc_private')
 endif
 
 " git
-autocmd Filetype gitcommit setlocal spell textwidth=72 "commit messages with spell checking and textwidth
+" commit messages with spell checking and textwidth
+autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " command to open easily this file
 command! Evimrc e ~/.vim/vimrc
