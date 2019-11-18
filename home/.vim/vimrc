@@ -218,6 +218,7 @@ let g:ale_lint_on_text_changed = "never"
 
 " Git client
 Plug 'tpope/vim-fugitive'
+Plug 'lambdalisue/gina.vim'
 
 nmap <leader>gg :Git 
 nmap <leader>gs :Gstatus<CR>
