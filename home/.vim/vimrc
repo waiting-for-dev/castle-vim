@@ -155,7 +155,7 @@ if has('nvim')
   " Start insert mode when entering a terminal
   autocmd BufEnter term://* startinsert
 
-  " https://github.com/neovim/neovim/wiki/Following-HEAD#20160511
+  " Terminal true colors
   set termguicolors
 
   " Make C-h work on nvim/tmux for vim-tmux-navigator plugin
