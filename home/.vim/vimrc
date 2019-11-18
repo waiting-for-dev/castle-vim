@@ -200,7 +200,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'godlygeek/tabular'
 
 " Color scheme
-Plug 'altercation/vim-colors-solarized'
+Plug 'romainl/Apprentice'
 
 " Auto-completion for quotes, parens, brackets, etc.
 Plug 'Raimondi/delimitMate'
@@ -454,4 +454,4 @@ call plug#end()
 
 " This needs to be called outside Plug block
 
-colorscheme solarized
+colorscheme apprentice
