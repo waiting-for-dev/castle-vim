@@ -138,10 +138,6 @@ if has('nvim')
 
   " Terminal true colors
   set termguicolors
-
-  " Make C-h work on nvim/tmux for vim-tmux-navigator plugin
-  " https://github.com/christoomey/vim-tmux-navigator#it-doesnt-work-in-neovim-specifically-c-h
-  nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 end
 
 """ START PLUG CONFIGURATION (https://github.com/junegunn/vim-plug) """
@@ -158,9 +154,6 @@ Plug 'tomtom/tlib_vim'
 Plug 'scrooloose/nerdtree'
 
 nmap <leader>t :NERDTreeToggle<CR> 
-
-" Navigate painlessly between vim/tmux windows
-Plug 'christoomey/vim-tmux-navigator'
 
 " Ruby configuration
 Plug 'vim-ruby/vim-ruby'
