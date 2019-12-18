@@ -161,9 +161,6 @@ Plug 'vim-ruby/vim-ruby'
 " Slim support
 Plug 'slim-template/vim-slim'
 
-" Twig support
-Plug 'evidens/vim-twig'
-
 " Search text under visual selection
 Plug 'bronson/vim-visual-star-search'
 
