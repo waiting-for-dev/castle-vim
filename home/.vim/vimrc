@@ -273,8 +273,6 @@ nmap <silent> <leader>A :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 let test#strategy = "neovim"
-let g:test#ruby#rspec#executable = 'docker-compose exec app bundle exec rspec'
-let g:test#elixir#exunit#executable = 'docker-compose exec app mix test'
 
 "Better javascript support
 Plug 'pangloss/vim-javascript'
