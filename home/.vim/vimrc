@@ -283,6 +283,8 @@ Plug 'mtth/scratch.vim'
 let g:scratch_persistence_file = '.scratch.vim'
 let g:scratch_autohide = 1
 let g:scratch_insert_autohide = 0
+let g:scratch_no_mappings = 1
+noremap <leader>s :Scratch<CR>
 
 " Better haskell support
 Plug 'neovimhaskell/haskell-vim'
