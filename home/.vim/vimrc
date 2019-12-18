@@ -103,7 +103,7 @@ command! Soh sp ~/.oh-my-zsh/custom/custom.zsh
 command! Voh vp ~/.oh-my-zsh/custom/custom.zsh
 
 " toggle search matches highlighting
-:noremap <leader>h :set hlsearch!<CR>
+nnoremap <leader>h :set hlsearch!<CR>
 
 " indent all file & return to current line
 nnoremap <F6> gg=G''
@@ -153,7 +153,7 @@ Plug 'tomtom/tlib_vim'
 " File manager
 Plug 'scrooloose/nerdtree'
 
-nmap <leader>t :NERDTreeToggle<CR> 
+nnoremap <leader>t :NERDTreeToggle<CR> 
 
 " Ruby configuration
 Plug 'vim-ruby/vim-ruby'
@@ -188,17 +188,17 @@ let g:vimwiki_list = [{'path': '~/wiki/', 'path_html': '~/wiki_html/', 'syntax':
 Plug 'tpope/vim-fugitive'
 Plug 'lambdalisue/gina.vim'
 
-nmap <leader>gg :Git 
-nmap <leader>gs :Gstatus<CR>
-nmap <leader>gc :Gcommit<CR>
-nmap <leader>gr :Gread<CR>
-nmap <leader>gw :Gwrite<CR>
-nmap <leader>gW :Gwrite<CR>:Gcommit<CR>
-nmap <leader>gM :Gwrite<CR>:Git commit --amend<CR>
-nmap <leader>gd :Gdiff<CR>
-nmap <leader>g. :Git add .<CR>
-nmap <leader>gm :Git commit --amend<CR>
-nmap <leader>gA :Git commit -a<CR>
+nnoremap <leader>gg :Git 
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gr :Gread<CR>
+nnoremap <leader>gw :Gwrite<CR>
+nnoremap <leader>gW :Gwrite<CR>:Gcommit<CR>
+nnoremap <leader>gM :Gwrite<CR>:Git commit --amend<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>g. :Git add .<CR>
+nnoremap <leader>gm :Git commit --amend<CR>
+nnoremap <leader>gA :Git commit -a<CR>
 
 "add git branch to the status line with fugitive
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
@@ -267,11 +267,11 @@ Plug 'wfleming/vim-codeclimate'
 " Run your tests at the speed of thought
 Plug 'janko-m/vim-test'
 
-nmap <silent> <leader>tt :TestNearest<CR>
-nmap <silent> <leader>tf :TestFile<CR>
-nmap <silent> <leader>ta :TestSuite<CR>
-nmap <silent> <leader>tl :TestLast<CR>
-nmap <silent> <leader>tv :TestVisit<CR>
+nnoremap <silent> <leader>tt :TestNearest<CR>
+nnoremap <silent> <leader>tf :TestFile<CR>
+nnoremap <silent> <leader>ta :TestSuite<CR>
+nnoremap <silent> <leader>tl :TestLast<CR>
+nnoremap <silent> <leader>tv :TestVisit<CR>
 let test#strategy = "neovim"
 
 "Better javascript support
@@ -318,14 +318,14 @@ nnoremap <silent> <C-d> <Plug>(coc-cursors-word)
 xnoremap <silent> <C-d> <Plug>(coc-cursors-range)
 
 " Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
+nnoremap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> gd <Plug>(coc-definition)
+nnoremap <silent> gy <Plug>(coc-type-definition)
+nnoremap <silent> gi <Plug>(coc-implementation)
+nnoremap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -342,11 +342,11 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
-nmap <leader>rn <Plug>(coc-rename)
+nnoremap <leader>rn <Plug>(coc-rename)
 
 " Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xnoremap <leader>f  <Plug>(coc-format-selected)
+nnoremap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -357,23 +357,23 @@ augroup mygroup
 augroup end
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+xnoremap <leader>a  <Plug>(coc-codeaction-selected)
+nnoremap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap for do codeAction of current line
-nmap <leader>ac  <Plug>(coc-codeaction)
+nnoremap <leader>ac  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
-nmap <leader>qf  <Plug>(coc-fix-current)
+nnoremap <leader>qf  <Plug>(coc-fix-current)
 
 " Create mappings for function text object, requires document symbols feature of languageserver.
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
+xnoremap if <Plug>(coc-funcobj-i)
+xnoremap af <Plug>(coc-funcobj-a)
+onoremap if <Plug>(coc-funcobj-i)
+onoremap af <Plug>(coc-funcobj-a)
 
 " Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> <C-e> <Plug>(coc-range-select)
-xmap <silent> <C-e> <Plug>(coc-range-select)
+nnoremap <silent> <C-e> <Plug>(coc-range-select)
+xnoremap <silent> <C-e> <Plug>(coc-range-select)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
