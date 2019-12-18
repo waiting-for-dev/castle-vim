@@ -245,7 +245,7 @@ Plug 'waiting-for-dev/vim-www'
 
 let g:www_launch_cli_browser_command = "elinks"
 let g:www_shortcut_engines = { 
-      \ 'devdocs': ['Doc', '<leader>k'],
+      \ 'devdocs': ['Devdocs', '<leader>K'],
       \ 'google': ['Google'],
       \ 'duckduckgo': ['Duckduckgo'],
       \ 'github': ['Github'],
