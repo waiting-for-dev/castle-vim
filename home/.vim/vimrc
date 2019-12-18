@@ -312,6 +312,11 @@ endfunction
 
 let g:coc_snippet_next = '<tab>'
 
+" Multiple cursors
+nnoremap <silent> <C-c> <Plug>(coc-cursors-position)
+nnoremap <silent> <C-d> <Plug>(coc-cursors-word)
+xnoremap <silent> <C-d> <Plug>(coc-cursors-range)
+
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
@@ -367,8 +372,8 @@ omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
 " Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> <C-d> <Plug>(coc-range-select)
-xmap <silent> <C-d> <Plug>(coc-range-select)
+nmap <silent> <C-e> <Plug>(coc-range-select)
+xmap <silent> <C-e> <Plug>(coc-range-select)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
@@ -414,3 +419,4 @@ call plug#end()
 " This needs to be called outside Plug block
 
 colorscheme apprentice
+
