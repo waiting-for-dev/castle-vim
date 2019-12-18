@@ -103,7 +103,7 @@ command! Soh sp ~/.oh-my-zsh/custom/custom.zsh
 command! Voh vp ~/.oh-my-zsh/custom/custom.zsh
 
 " toggle search matches highlighting
-:noremap <F12> :set hlsearch!<CR>
+:noremap <leader>h :set hlsearch!<CR>
 
 " indent all file & return to current line
 nnoremap <F6> gg=G''
