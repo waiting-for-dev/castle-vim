@@ -112,10 +112,10 @@ nnoremap <F6> gg=G''
 nnoremap <F5> :redraw!<CR>
 
 " tab navigation
-nnoremap <leader>tp :tabprevious<CR>
-nnoremap <leader>tn :tabNext<CR>
-nnoremap <leader>tP :tabfirst<CR>
-nnoremap <leader>tN :tablast<CR>
+nnoremap [t :tabprevious<CR>
+nnoremap ]t :tabNext<CR>
+nnoremap [T :tabfirst<CR>
+nnoremap ]T :tablast<CR>
 
 " Easily find todo's
 nnoremap <leader><leader>t :Ggrep TODO:<CR>
