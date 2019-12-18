@@ -267,11 +267,11 @@ Plug 'wfleming/vim-codeclimate'
 " Run your tests at the speed of thought
 Plug 'janko-m/vim-test'
 
-nmap <silent> <leader>r :TestNearest<CR>
-nmap <silent> <leader>R :TestFile<CR>
-nmap <silent> <leader>A :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
+nmap <silent> <leader>tt :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ta :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>tv :TestVisit<CR>
 let test#strategy = "neovim"
 
 "Better javascript support
