@@ -86,8 +86,7 @@ if filereadable($HOME.'/.vim/vimrc_private')
   source $HOME/.vim/vimrc_private
 endif
 
-" git
-" commit messages with spell checking and textwidth
+" git commit messages with spell checking and textwidth
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " command to open easily this file
@@ -102,9 +101,6 @@ command! Vimrc source $MYVIMRC
 command! Eoh e ~/.oh-my-zsh/custom/custom.zsh
 command! Soh sp ~/.oh-my-zsh/custom/custom.zsh
 command! Voh vp ~/.oh-my-zsh/custom/custom.zsh
-
-" mapping to close quickfix windows
-nnoremap <F8> :cclose<CR>
 
 " toggle search matches highlighting
 :noremap <F12> :set hlsearch!<CR>
