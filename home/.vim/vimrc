@@ -84,6 +84,14 @@ set signcolumn=yes
 " forward one word
 :cnoremap <Esc><C-F>	<S-Right>
 
+" Use <C-j> & <C-k> to move through popup candidates
+inoremap <C-j> <C-n>
+inoremap <C-k> <C-p>
+
+" Use <C-j> & <C-k> to move through wildmenu candidates
+cnoremap <C-j> <Right>
+cnoremap <C-k> <Left>
+
 """ OTHER CONFIGURATION """
 
 " for writing Calibre recipes (http://manual.calibre-ebook.com/news.html)
