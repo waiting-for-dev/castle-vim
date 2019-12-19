@@ -342,7 +342,7 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
-nnoremap <leader>rn <Plug>(coc-rename)
+nnoremap <leader>r <Plug>(coc-rename)
 
 " Remap for format selected region
 xnoremap <leader>f  <Plug>(coc-format-selected)
