@@ -365,10 +365,10 @@ nnoremap <leader>a  <Plug>(coc-codeaction)
 nnoremap <leader>q  <Plug>(coc-fix-current)
 
 " Create mappings for function text object, requires document symbols feature of languageserver.
-xnoremap if <Plug>(coc-funcobj-i)
-xnoremap af <Plug>(coc-funcobj-a)
-onoremap if <Plug>(coc-funcobj-i)
-onoremap af <Plug>(coc-funcobj-a)
+xnoremap <leader>fi <Plug>(coc-funcobj-i)
+xnoremap <leader>fa <Plug>(coc-funcobj-a)
+onoremap <leader>fi <Plug>(coc-funcobj-i)
+onoremap <leader>fa <Plug>(coc-funcobj-a)
 
 " Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
 nnoremap <silent> <C-e> <Plug>(coc-range-select)
