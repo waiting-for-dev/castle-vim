@@ -264,7 +264,6 @@ nnoremap <silent> <leader>tf :TestFile<CR>
 nnoremap <silent> <leader>ta :TestSuite<CR>
 nnoremap <silent> <leader>tl :TestLast<CR>
 nnoremap <silent> <leader>tv :TestVisit<CR>
-let test#strategy = "neovim"
 
 "Better javascript support
 Plug 'pangloss/vim-javascript'
