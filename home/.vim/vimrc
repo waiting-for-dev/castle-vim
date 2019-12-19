@@ -357,13 +357,12 @@ augroup mygroup
 augroup end
 
 " Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-xnoremap <leader>a  <Plug>(coc-codeaction-selected)
-nnoremap <leader>a  <Plug>(coc-codeaction-selected)
-
+xnoremap <leader>as  <Plug>(coc-codeaction-selected)
+nnoremap <leader>as  <Plug>(coc-codeaction-selected)
 " Remap for do codeAction of current line
-nnoremap <leader>ac  <Plug>(coc-codeaction)
+nnoremap <leader>a  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
-nnoremap <leader>qf  <Plug>(coc-fix-current)
+nnoremap <leader>q  <Plug>(coc-fix-current)
 
 " Create mappings for function text object, requires document symbols feature of languageserver.
 xnoremap if <Plug>(coc-funcobj-i)
