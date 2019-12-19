@@ -370,9 +370,9 @@ xnoremap <leader>fa <Plug>(coc-funcobj-a)
 onoremap <leader>fi <Plug>(coc-funcobj-i)
 onoremap <leader>fa <Plug>(coc-funcobj-a)
 
-" Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nnoremap <silent> <C-e> <Plug>(coc-range-select)
-xnoremap <silent> <C-e> <Plug>(coc-range-select)
+" Select selections ranges, needs server support, like: coc-tsserver, coc-python
+nnoremap <silent> <leader>rs <Plug>(coc-range-select)
+xnoremap <silent> <leader>rs <Plug>(coc-range-select)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
