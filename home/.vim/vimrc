@@ -259,7 +259,7 @@ Plug 'wfleming/vim-codeclimate'
 " Run your tests at the speed of thought
 Plug 'janko-m/vim-test'
 
-nnoremap <silent> <leader>t :TestNearest<CR>
+nnoremap <silent> <leader>tt :TestNearest<CR>
 nnoremap <silent> <leader>tf :TestFile<CR>
 nnoremap <silent> <leader>ta :TestSuite<CR>
 nnoremap <silent> <leader>tl :TestLast<CR>
@@ -351,7 +351,7 @@ augroup end
 xnoremap <leader>as  <Plug>(coc-codeaction-selected)
 nnoremap <leader>as  <Plug>(coc-codeaction-selected)
 " Remap for do codeAction of current line
-nnoremap <leader>a  <Plug>(coc-codeaction)
+nnoremap <leader>aa  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
 nnoremap <leader>q  <Plug>(coc-fix-current)
 
