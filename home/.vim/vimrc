@@ -303,6 +303,8 @@ endfunction
 
 let g:coc_snippet_next = '<tab>'
 
+vmap <Tab> <Plug>(coc-snippets-select)
+
 " Multiple cursors
 nnoremap <silent> <leader>m <Plug>(coc-cursors-position)
 nnoremap <silent> <leader>mw <Plug>(coc-cursors-word)
