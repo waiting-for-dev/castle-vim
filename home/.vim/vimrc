@@ -313,9 +313,9 @@ endfunction
 let g:coc_snippet_next = '<tab>'
 
 " Multiple cursors
-nnoremap <silent> <C-c> <Plug>(coc-cursors-position)
-nnoremap <silent> <C-d> <Plug>(coc-cursors-word)
-xnoremap <silent> <C-d> <Plug>(coc-cursors-range)
+nnoremap <silent> <leader>mm <Plug>(coc-cursors-position)
+nnoremap <silent> <leader>mw <Plug>(coc-cursors-word)
+xnoremap <silent> <leader>mw <Plug>(coc-cursors-range)
 
 " Use `[g` and `]g` to navigate diagnostics
 nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
