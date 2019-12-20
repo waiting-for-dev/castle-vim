@@ -133,9 +133,6 @@ if has('nvim')
   tnoremap <C-w>k <C-\><C-n><C-w>k
   tnoremap <C-w>l <C-\><C-n><C-w>l
 
-  " Start insert mode when entering a terminal
-  autocmd BufEnter term://* startinsert
-
   " Terminal true colors
   set termguicolors
 end
