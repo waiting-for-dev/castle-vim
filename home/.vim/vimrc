@@ -64,6 +64,9 @@ set shortmess+=c
 " Always display signcolumn
 set signcolumn=yes
 
+" Allow for per-project .exrc files
+set exrc
+
 " Use <C-j> & <C-k> to move through popup candidates
 inoremap <C-j> <C-n>
 inoremap <C-k> <C-p>
