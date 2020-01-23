@@ -7,3 +7,6 @@ setlocal textwidth=80
 "some abbreviation
 abbreviate saop save_and_open_page
 abbreviate bp binding.pry
+
+"outline rspec
+command! Outline :g/describe\|^\s*scenario\|^\s*context\|^\s*it/#
