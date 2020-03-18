@@ -283,6 +283,9 @@ Plug 'neovimhaskell/haskell-vim'
 " Snippets
 Plug 'honza/vim-snippets'
 
+" Jump to any reference
+Plug 'pechorin/any-jump.vim'
+
 " Intellisense and Language Server Protocol
 Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 
