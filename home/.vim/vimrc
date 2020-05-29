@@ -153,7 +153,7 @@ Plug 'tomtom/tlib_vim'
 " File manager
 Plug 'scrooloose/nerdtree'
 
-nnoremap <leader>t :NERDTreeToggle<CR> 
+nnoremap <leader>f :NERDTreeToggle<CR>
 
 " Ruby configuration
 Plug 'vim-ruby/vim-ruby'
@@ -259,7 +259,7 @@ Plug 'wfleming/vim-codeclimate'
 " Run your tests at the speed of thought
 Plug 'janko-m/vim-test'
 
-nnoremap <silent> <leader>tt :TestNearest<CR>
+nnoremap <silent> <leader>t :TestNearest<CR>
 nnoremap <silent> <leader>tf :TestFile<CR>
 nnoremap <silent> <leader>ta :TestSuite<CR>
 nnoremap <silent> <leader>tl :TestLast<CR>
