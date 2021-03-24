@@ -299,6 +299,9 @@ if has("autocmd") && exists("+omnifunc")
    \ endif
 endif
 
+" Nice statusline
+Plug 'vim-airline/vim-airline'
+
 " Intellisense and Language Server Protocol
 Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
 
