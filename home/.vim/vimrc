@@ -186,6 +186,8 @@ let g:vimwiki_list = [{'path': '~/wiki/', 'path_html': '~/wiki_html/', 'syntax':
 
 " Git client
 Plug 'tpope/vim-fugitive'
+" Github backend for fugitive
+Plug 'tpope/vim-rhubarb'
 
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
