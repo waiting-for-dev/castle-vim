@@ -152,6 +152,7 @@ Plug 'tomtom/tlib_vim'
 
 " File manager
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 nnoremap <leader>f :NERDTreeToggle<CR>
 
