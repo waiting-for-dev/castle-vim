@@ -1,4 +1,8 @@
 {
+  "diagnostic.errorSign": "☠",
+  "diagnostic.warningSign": "⚠",
+  "diagnostic.infoSign": "ℹ",
+  "diagnostic.hintSign": "🔎",
   "solargraph.diagnostics": true,
   "languageserver": {
     "haskell": {
