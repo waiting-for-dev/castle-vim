@@ -302,6 +302,7 @@ endif
 
 " Nice statusline
 Plug 'vim-airline/vim-airline'
+let g:airline#extensions#tabline#enabled = 1
 
 " Intellisense and Language Server Protocol
 Plug 'neoclide/coc.nvim', { 'do': 'yarn install --frozen-lockfile' }
